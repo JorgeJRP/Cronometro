@@ -20,3 +20,4 @@ open_project: Time (s): cpu = 00:00:14 ; elapsed = 00:00:05 . Memory (MB): peak 
 update_compile_order -fileset sources_1
 exit
 INFO: [Common 17-206] Exiting Vivado at Tue Dec  8 21:16:39 2020...
+#------
