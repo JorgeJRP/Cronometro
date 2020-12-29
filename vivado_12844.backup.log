@@ -2,10 +2,10 @@
 # Vivado v2019.1 (64-bit)
 # SW Build 2552052 on Fri May 24 14:49:42 MDT 2019
 # IP Build 2548770 on Fri May 24 18:01:18 MDT 2019
-# Start of session at: Fri Dec  4 20:08:56 2020
-# Process ID: 13088
+# Start of session at: Thu Dec 17 12:28:01 2020
+# Process ID: 12844
 # Current directory: G:/SED/Cronometro
-# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent12564 G:\SED\Cronometro\Cronometro.xpr
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent21164 G:\SED\Cronometro\Cronometro.xpr
 # Log file: G:/SED/Cronometro/vivado.log
 # Journal file: G:/SED/Cronometro\vivado.jou
 #-----------------------------------------------------------
@@ -16,12 +16,7 @@ Finished scanning sources
 INFO: [IP_Flow 19-234] Refreshing IP repositories
 INFO: [IP_Flow 19-1704] No user IP repositories specified
 INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2019.1/data/ip'.
+open_project: Time (s): cpu = 00:00:17 ; elapsed = 00:00:06 . Memory (MB): peak = 713.723 ; gain = 79.711
 update_compile_order -fileset sources_1
-launch_runs synth_1 -jobs 4
-[Fri Dec  4 20:09:39 2020] Launched synth_1...
-Run output will be captured here: G:/SED/Cronometro/Cronometro.runs/synth_1/runme.log
-launch_runs impl_1 -jobs 4
-[Fri Dec  4 20:10:29 2020] Launched impl_1...
-Run output will be captured here: G:/SED/Cronometro/Cronometro.runs/impl_1/runme.log
 exit
-INFO: [Common 17-206] Exiting Vivado at Fri Dec  4 20:26:12 2020...
+INFO: [Common 17-206] Exiting Vivado at Thu Dec 17 12:48:08 2020...

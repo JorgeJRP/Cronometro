@@ -68,6 +68,8 @@ architecture Behavioral of top is
 	signal segment_unid_min:std_logic_vector(6 downto 0);
 	signal segment_dec_min:std_logic_vector(6 downto 0);
 
+
+--COMPONENTES
 	COMPONENT clk_divider
 	GENERIC (frec: integer:=50000000);
 	PORT(
@@ -146,7 +148,7 @@ architecture Behavioral of top is
    signal aux1,aux2,aux3,aux4,aux5,aux6: std_logic;
 
 begin
-
+-- INSTANCIAS DE TODOS LOS COMPONENTES
 	Inst_clk_divider_counter: clk_divider generic map (frec=>50000000) PORT MAP(
 		clk => clk,
 		reset => reset,

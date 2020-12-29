@@ -11,7 +11,7 @@ architecture Behavioral of decoder is
 
 begin
 	WITH code SELECT
-		led <= "0000001" WHEN "0000",
+		led <=  "0000001" WHEN "0000",
 				"1001111" WHEN "0001",
 				"0010010" WHEN "0010",
 				"0000110" WHEN "0011",

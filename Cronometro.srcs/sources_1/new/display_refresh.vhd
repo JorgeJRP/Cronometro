@@ -5,12 +5,12 @@ use IEEE.STD_LOGIC_1164.ALL;
 
 entity display_refresh is
     Port ( clk : in  STD_LOGIC;
-           segment_unid_seg : IN std_logic_vector(6 downto 0);
+                segment_unid_seg : IN std_logic_vector(6 downto 0);
 				segment_unid_min : IN std_logic_vector(6 downto 0);
 				segment_dec_seg : IN std_logic_vector(6 downto 0);
 				segment_dec_min : IN std_logic_vector(6 downto 0);
-           display_number : out  STD_LOGIC_VECTOR (6 downto 0);
-           display_selection : out  STD_LOGIC_VECTOR (3 downto 0));
+                display_number : out  STD_LOGIC_VECTOR (6 downto 0);
+                display_selection : out  STD_LOGIC_VECTOR (3 downto 0));
 end display_refresh;
 
 architecture Behavioral of display_refresh is
