@@ -12,7 +12,6 @@ entity top is
 end top;
 
 architecture Behavioral of top is
-
 -- SEÑALES ENTRE DIFERENTES COMPONENTES
 
 
