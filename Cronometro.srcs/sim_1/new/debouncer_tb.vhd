@@ -8,15 +8,17 @@ end;
 architecture bench of debouncer_tb is
 
   component debouncer
-      port (
-         clk	 : in std_logic;
-  	     btn_in  : in std_logic;
-  	     btn_out : out std_logic);
+      port ( clk     : in std_logic;
+             btn_in  : in std_logic; 
+             reset   : in std_logic;
+             btn_out : out std_logic
+            );
   end component;
 
   signal clk: std_logic;
   signal btn_in: std_logic;
-  signal btn_out: std_logic;
+  signal reset: std_logic;
+  signal btn_out: std_logic ;
 
   constant clock_period: time := 10 ns;
   signal stop_the_clock: boolean;
@@ -25,29 +27,22 @@ begin
 
   uut: debouncer port map ( clk     => clk,
                             btn_in  => btn_in,
+                            reset   => reset,
                             btn_out => btn_out );
 
   stimulus: process
   begin
   
-   btn_in <= '0';
-   wait for 10 ns;
-   btn_in <= '1';
-   wait for 2 ns;
-   btn_in <= '0';
-   wait for 3 ns;
-   btn_in <= '1';
-   wait for 3 ns;
-   btn_in <= '0';
-   wait for 10 ns;
-   btn_in <= '1';
-   wait for 2 ns;
-   btn_in <= '0';
-   wait for 1 ns;
-   btn_in <= '1';   
-   wait for 100 ns;
-   btn_in <= '0';
-   wait for 100 ns;
+    reset <= '1';
+    wait for 5 ns;
+    reset <= '0';
+    wait for 5 ns;
+
+    --señales para testeo
+    btn_in <= '1';
+    wait for 30 ns;
+    btn_in <= '0';
+    wait for 30 ns;
 
     stop_the_clock <= true;
     wait;
@@ -63,4 +58,3 @@ begin
   end process;
 
 end;
-  

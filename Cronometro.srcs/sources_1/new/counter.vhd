@@ -5,13 +5,13 @@ use IEEE.NUMERIC_STD.ALL;
 
 entity counter is
     generic (tope:integer:=10);
-    Port ( clk : in  STD_LOGIC;
-           rst : in  STD_LOGIC;
+    Port ( clk    : in  STD_LOGIC;
+           rst    : in  STD_LOGIC;
            enable : in  STD_LOGIC;
            up_down: in STD_LOGIC;
-           load: in  STD_LOGIC_VECTOR (3 downto 0);
+           load   : in  STD_LOGIC_VECTOR (3 downto 0);
            
-           count : out  STD_LOGIC_VECTOR (3 downto 0);
+           count  : out  STD_LOGIC_VECTOR (3 downto 0);
            count2 : out  STD_LOGIC_VECTOR (3 downto 0);
            salida : out  STD_LOGIC);
 end counter;

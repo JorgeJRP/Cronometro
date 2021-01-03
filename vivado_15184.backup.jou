@@ -2,10 +2,10 @@
 # Vivado v2019.1 (64-bit)
 # SW Build 2552052 on Fri May 24 14:49:42 MDT 2019
 # IP Build 2548770 on Fri May 24 18:01:18 MDT 2019
-# Start of session at: Thu Dec 17 12:28:01 2020
-# Process ID: 12844
+# Start of session at: Sat Jan  2 17:34:49 2021
+# Process ID: 15184
 # Current directory: G:/SED/Cronometro
-# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent21164 G:\SED\Cronometro\Cronometro.xpr
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent4328 G:\SED\Cronometro\Cronometro.xpr
 # Log file: G:/SED/Cronometro/vivado.log
 # Journal file: G:/SED/Cronometro\vivado.jou
 #-----------------------------------------------------------

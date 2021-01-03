@@ -1,0 +1,202 @@
+/*
+
+Xilinx Vivado v2019.1 (64-bit) [Major: 2019, Minor: 1]
+SW Build: 2552052 on Fri May 24 14:49:42 MDT 2019
+IP Build: 2548770 on Fri May 24 18:01:18 MDT 2019
+
+Process ID (PID): 18660
+License: Customer
+
+Current time: 	Sun Jan 03 17:40:37 CET 2021
+Time zone: 	Central European Standard Time (Europe/Paris)
+
+OS: Windows 10
+OS Version: 10.0
+OS Architecture: amd64
+Available processors (cores): 8
+
+Screen size: 1920x1080
+Screen resolution (DPI): 100
+Available screens: 2
+Available disk space: 56 GB
+Default font: family=Dialog,name=Dialog,style=plain,size=12
+
+Java version: 	9.0.4 64-bit
+Java home: 	C:/Xilinx/Vivado/2019.1/tps/win64/jre9.0.4
+Java executable location: 	C:/Xilinx/Vivado/2019.1/tps/win64/jre9.0.4/bin/java.exe
+Java initial memory (-Xms): 	128 MB
+Java maximum memory (-Xmx):	 3 GB
+
+
+User name: 	Jorge Rico
+User home directory: C:/Users/Jorge Rico
+User working directory: G:/SED/Cronometro
+User country: 	ES
+User language: 	es
+User locale: 	es_ES
+
+RDI_BASEROOT: C:/Xilinx/Vivado
+HDI_APPROOT: C:/Xilinx/Vivado/2019.1
+RDI_DATADIR: C:/Xilinx/Vivado/2019.1/data
+RDI_BINDIR: C:/Xilinx/Vivado/2019.1/bin
+
+Vivado preferences file location: C:/Users/Jorge Rico/AppData/Roaming/Xilinx/Vivado/2019.1/vivado.xml
+Vivado preferences directory: C:/Users/Jorge Rico/AppData/Roaming/Xilinx/Vivado/2019.1/
+Vivado layouts directory: C:/Users/Jorge Rico/AppData/Roaming/Xilinx/Vivado/2019.1/layouts
+PlanAhead jar file location: 	C:/Xilinx/Vivado/2019.1/lib/classes/planAhead.jar
+Vivado log file location: 	G:/SED/Cronometro/vivado.log
+Vivado journal file location: 	G:/SED/Cronometro/vivado.jou
+Engine tmp dir: 	G:/SED/Cronometro/.Xil/Vivado-18660-DESKTOP-RN1OMPT
+
+Xilinx Environment Variables
+----------------------------
+XILINX: C:/Xilinx/Vivado/2019.1/ids_lite/ISE
+XILINX_DSP: C:/Xilinx/Vivado/2019.1/ids_lite/ISE
+XILINX_PLANAHEAD: C:/Xilinx/Vivado/2019.1
+XILINX_SDK: C:/Xilinx/SDK/2019.1
+XILINX_VIVADO: C:/Xilinx/Vivado/2019.1
+XILINX_VIVADO_HLS: C:/Xilinx/Vivado/2019.1
+
+
+GUI allocated memory:	154 MB
+GUI max memory:		3,072 MB
+Engine allocated memory: 619 MB
+
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+
+*/
+
+// TclEventType: START_GUI
+// Tcl Message: start_gui 
+// TclEventType: PROJECT_OPEN_DIALOG
+// by (cl):  Open Project : addNotify
+// Opening Vivado Project: G:\SED\Cronometro\Cronometro.xpr. Version: Vivado v2019.1 
+// Tcl Message: open_project G:/SED/Cronometro/Cronometro.xpr 
+// TclEventType: DEBUG_PROBE_SET_CHANGE
+// TclEventType: MSGMGR_MOVEMSG
+// TclEventType: FILE_SET_NEW
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_CURRENT
+// TclEventType: PROJECT_DASHBOARD_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_NEW
+// Tcl Message: open_project G:/SED/Cronometro/Cronometro.xpr 
+// Tcl Message: Scanning sources... Finished scanning sources 
+// Tcl Message: INFO: [IP_Flow 19-234] Refreshing IP repositories INFO: [IP_Flow 19-1704] No user IP repositories specified 
+// TclEventType: PROJECT_NEW
+// [GUI Memory]: 113 MB (+116405kb) [00:00:11]
+// [Engine Memory]: 637 MB (+516520kb) [00:00:11]
+// [Engine Memory]: 672 MB (+3343kb) [00:00:13]
+// WARNING: HEventQueue.dispatchEvent() is taking  3407 ms.
+// Tcl Message: INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2019.1/data/ip'. 
+// HMemoryUtils.trashcanNow. Engine heap size: 689 MB. GUI used memory: 54 MB. Current time: 1/3/21, 5:40:41 PM CET
+// Tcl Message: open_project: Time (s): cpu = 00:00:15 ; elapsed = 00:00:06 . Memory (MB): peak = 712.828 ; gain = 80.035 
+// Project name: Cronometro; location: G:/SED/Cronometro; part: xc7k70tfbv676-1
+dismissDialog("Open Project"); // by (cl)
+// [Engine Memory]: 723 MB (+18393kb) [00:00:19]
+// Tcl Message: update_compile_order -fileset sources_1 
+// PAPropertyPanels.initPanels (debouncer.vhd) elapsed time: 0.2s
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, debouncer(Behavioral) (debouncer.vhd)]", 2, false); // B (F, cl)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, debouncer(Behavioral) (debouncer.vhd)]", 2, false, false, false, false, false, true); // B (F, cl) - Double Click
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, top(Behavioral) (top.vhd)]", 1, true); // B (F, cl) - Node
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, top(Behavioral) (top.vhd), Inst_clk_divider_counter : clk_divider(Behavioral) (clk_divider.vhd)]", 2, false, false, false, false, false, true); // B (F, cl) - Double Click
+// Elapsed time: 20 seconds
+selectCodeEditor("top.vhd", 138, 489); // cl (w, cl)
+// Elapsed time: 46 seconds
+typeControlKey((HResource) null, "top.vhd", 'c'); // cl (w, cl)
+// Elapsed time: 23 seconds
+selectCodeEditor("top.vhd", 385, 355); // cl (w, cl)
+selectCodeEditor("top.vhd", 67, 493); // cl (w, cl)
+selectCodeEditor("top.vhd", 284, 496); // cl (w, cl)
+selectButton(RDIResourceCommand.RDICommands_SAVE_FILE, (String) null); // B (f, cl)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Tcl Message: update_compile_order -fileset sources_1 
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_GRAPH_STALE
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, Non-module Files]", 1); // B (F, cl)
+// [Engine Memory]: 760 MB (+153kb) [00:02:24]
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Tcl Message: update_compile_order -fileset sources_1 
+// Elapsed time: 24 seconds
+selectCodeEditor("top.vhd", 63, 12); // cl (w, cl)
+selectCodeEditor("top.vhd", 33, 21); // cl (w, cl)
+typeControlKey((HResource) null, "top.vhd", 'v'); // cl (w, cl)
+selectCodeEditor("top.vhd", 104, 77); // cl (w, cl)
+selectCodeEditor("top.vhd", 120, 94); // cl (w, cl)
+selectCodeEditor("top.vhd", 141, 80); // cl (w, cl)
+selectCodeEditor("top.vhd", 120, 94); // cl (w, cl)
+selectCodeEditor("top.vhd", 148, 114); // cl (w, cl)
+selectCodeEditor("top.vhd", 164, 96); // cl (w, cl)
+selectCodeEditor("top.vhd", 150, 69); // cl (w, cl)
+selectCodeEditor("top.vhd", 174, 93); // cl (w, cl)
+selectCodeEditor("top.vhd", 165, 83); // cl (w, cl)
+selectCodeEditor("top.vhd", 128, 124); // cl (w, cl)
+selectCodeEditor("top.vhd", 181, 149); // cl (w, cl)
+selectCodeEditor("top.vhd", 187, 130); // cl (w, cl)
+selectCodeEditor("top.vhd", 187, 113); // cl (w, cl)
+selectCodeEditor("top.vhd", 184, 95); // cl (w, cl)
+selectCodeEditor("top.vhd", 181, 80); // cl (w, cl)
+selectCodeEditor("top.vhd", 178, 256); // cl (w, cl)
+selectCodeEditor("top.vhd", 368, 130); // cl (w, cl)
+selectCodeEditor("top.vhd", 288, 241); // cl (w, cl)
+selectButton(RDIResourceCommand.RDICommands_SAVE_FILE, (String) null); // B (f, cl)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Elapsed time: 30 seconds
+selectCodeEditor("top.vhd", 264, 308); // cl (w, cl)
+collapseTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources]", 0); // B (F, cl)
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources]", 0); // B (F, cl)
+selectCodeEditor("top.vhd", 28, 249); // cl (w, cl)
+typeControlKey((HResource) null, "top.vhd", 'v'); // cl (w, cl)
+// Elapsed time: 13 seconds
+selectCodeEditor("top.vhd", 84, 253); // cl (w, cl)
+selectCodeEditor("top.vhd", 70, 256); // cl (w, cl)
+// Elapsed time: 39 seconds
+selectCodeEditor("top.vhd", 250, 259); // cl (w, cl)
+// Elapsed time: 41 seconds
+selectCodeEditor("top.vhd", 77, 264); // cl (w, cl)
+selectCodeEditor("top.vhd", 320, 254); // cl (w, cl)
+selectCodeEditor("top.vhd", 317, 267); // cl (w, cl)
+// Elapsed time: 45 seconds
+selectCodeEditor("top.vhd", 14, 429); // cl (w, cl)
+selectCodeEditor("top.vhd", 16, 354); // cl (w, cl)
+selectCodeEditor("top.vhd", 18, 263); // cl (w, cl)
+selectCodeEditor("top.vhd", 226, 476); // cl (w, cl)
+// Elapsed time: 24 seconds
+selectCodeEditor("top.vhd", 8, 460); // cl (w, cl)
+selectCodeEditor("top.vhd", 25, 449); // cl (w, cl)
+// Elapsed time: 13 seconds
+selectCodeEditor("top.vhd", 42, 451); // cl (w, cl)
+selectCodeEditor("top.vhd", 16, 453); // cl (w, cl)
+selectCodeEditor("top.vhd", 61, 469); // cl (w, cl)
+selectCodeEditor("top.vhd", 68, 376); // cl (w, cl)
+selectCodeEditor("top.vhd", 49, 477); // cl (w, cl)
+// Elapsed time: 32 seconds
+selectCodeEditor("top.vhd", 66, 487); // cl (w, cl)
+// Elapsed time: 12 seconds
+selectButton(RDIResourceCommand.RDICommands_SAVE_FILE, (String) null); // B (f, cl)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Elapsed time: 139 seconds
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, debouncer(Behavioral) (debouncer.vhd)]", 5, false); // B (F, cl)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, debouncer(Behavioral) (debouncer.vhd)]", 5, false, false, false, false, false, true); // B (F, cl) - Double Click
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, top(Behavioral) (top.vhd)]", 9, false); // B (F, cl)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, top(Behavioral) (top.vhd)]", 9, false, false, false, false, false, true); // B (F, cl) - Double Click
