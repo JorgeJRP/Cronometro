@@ -2,7 +2,8 @@ library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 
 entity debouncer is
-    port ( clk     : in std_logic;
+    port ( 
+           clk     : in std_logic;
            btn_in  : in std_logic; 
            reset   : in std_logic;
            btn_out : out std_logic
