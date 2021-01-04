@@ -99,7 +99,7 @@ begin
     end process;
     
     --Proceso para obtener señal en segundos
-    preescalado_reloj: process (CLK, RESET_N,IN_P)
+    preescalado_reloj: process (CLK, RESET_N, IN_P)
 
     variable cnt:integer;
     begin
