@@ -14,7 +14,7 @@ entity Counter is
         digsel      : out std_logic_vector(7 downto 0)
         );
 end entity Counter;
-
+    
 architecture Behavioral of Counter is
 
 type state_t is (S0_INITIAL, S1_UPWARD, S2_STOPUP, S3_STOPDOWN, S4_DOWNWARD);
@@ -201,5 +201,60 @@ begin
         end if;
         end case;        
     end process;           
+    
+    emisor: process (CLK)
+    variable n  : integer range 0 to 7;
+    begin
+        if rising_edge (CLK) then    --Código para la alternancia de dígitos
+			if n=7 then             
+				n:=0;
+			else
+				n:=n+1;
+			end if;
+		end if;
+		
+		case n is
+				when 0 =>   --U
+				    if state = S1_UPWARD or state = S2_STOPUP then      --Cuidado OR
+				        code <= "1010";
+				        digsel <= "10000000";
+				    else
+				        digsel <= "00000000";
+				    end if;
+				when 1 =>   --P
+				    if state = S1_UPWARD or state = S2_STOPUP then      --Cuidado OR
+				        code <= "1011";
+				        digsel <= "01000000";
+				    else
+				        digsel <= "00000000";
+				    end if;
+				when 2 =>   --d
+				    if state = S4_DOWNWARD or state = S3_STOPDOWN then      --Cuidado OR
+				        code <= "1100";
+				        digsel <= "00100000";
+				    else
+				        digsel <= "00000000";
+				    end if;
+				when 3 =>   --o
+				    if state = S4_DOWNWARD or state = S3_STOPDOWN then      --Cuidado OR
+				        code <= "1101";
+				        digsel <= "00010000";
+				    else
+				        digsel <= "00000000";
+				    end if;
+			    when 4 =>   --Decenas minutos
+				    code <= std_logic_vector(cuenta_min_dec);       --Cuidado error de longitud
+				    digsel <= "00001000";                           --(que convierta a 4 bits)
+				when 5 =>   --Unidades minutos
+				    code <= std_logic_vector(cuenta_min_un);       --Cuidado error de longitud
+				    digsel <= "00000100";
+				when 6 =>   --Decenas segundos
+				    code <= std_logic_vector(cuenta_seg_dec);       --Cuidado error de longitud
+				    digsel <= "00000010";
+		        when 7 =>   --Unidades segundos
+				    code <= std_logic_vector(cuenta_seg_un);       --Cuidado error de longitud
+				    digsel <= "00000001";				    
+		end case;    
+    end process;
 
 end Behavioral;
