@@ -94,16 +94,11 @@
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
-      <File Path="$PSRCDIR/sources_1/new/counter.vhd">
+      <File Path="$PSRCDIR/sources_1/imports/new/Decoder.vhd">
         <FileInfo>
           <Attr Name="AutoDisabled" Val="1"/>
-          <Attr Name="UsedIn" Val="synthesis"/>
-          <Attr Name="UsedIn" Val="simulation"/>
-        </FileInfo>
-      </File>
-      <File Path="$PPRDIR/../../Trabajo Gus/Decodificador_Display/Decodificador_Display.srcs/sources_1/new/Decoder.vhd">
-        <FileInfo>
-          <Attr Name="AutoDisabled" Val="1"/>
+          <Attr Name="ImportPath" Val="$PPRDIR/../../Trabajo Gus/Decodificador_Display/Decodificador_Display.srcs/sources_1/new/Decoder.vhd"/>
+          <Attr Name="ImportTime" Val="1609757849"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
@@ -136,9 +131,20 @@
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
-      <File Path="$PPRDIR/../../Trabajo Gus/Decodificador_Display/Decodificador_Display.srcs/sim_1/new/Decoder_tb.vhd">
+      <File Path="$PSRCDIR/sim_1/imports/Decodificador_Display.srcs/sim_1/new/Decoder_tb.vhd">
         <FileInfo>
           <Attr Name="AutoDisabled" Val="1"/>
+          <Attr Name="ImportPath" Val="$PPRDIR/../../Trabajo Gus/Decodificador_Display/Decodificador_Display.srcs/sim_1/new/Decoder_tb.vhd"/>
+          <Attr Name="ImportTime" Val="1609172160"/>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PSRCDIR/sim_1/imports/Decodificador_Display.srcs/sources_1/new/Decoder.vhd">
+        <FileInfo>
+          <Attr Name="AutoDisabled" Val="1"/>
+          <Attr Name="ImportPath" Val="$PPRDIR/../../Trabajo Gus/Decodificador_Display/Decodificador_Display.srcs/sources_1/new/Decoder.vhd"/>
+          <Attr Name="ImportTime" Val="1609757849"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
