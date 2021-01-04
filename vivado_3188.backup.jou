@@ -1,0 +1,14 @@
+#-----------------------------------------------------------
+# Vivado v2020.2 (64-bit)
+# SW Build 3064766 on Wed Nov 18 09:12:45 MST 2020
+# IP Build 3064653 on Wed Nov 18 14:17:31 MST 2020
+# Start of session at: Mon Jan  4 11:10:47 2021
+# Process ID: 3188
+# Current directory: D:/Archivos/Escritorio/GITHUB/Cronómetro/Cronometro
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent17896 D:\Archivos\Escritorio\GITHUB\Cronómetro\Cronometro\Cronometro.xpr
+# Log file: D:/Archivos/Escritorio/GITHUB/Cronómetro/Cronometro/vivado.log
+# Journal file: D:/Archivos/Escritorio/GITHUB/Cronómetro/Cronometro\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project D:/Archivos/Escritorio/GITHUB/Cronómetro/Cronometro/Cronometro.xpr
+update_compile_order -fileset sources_1
