@@ -99,11 +99,15 @@ begin
     end process;
     
     --Proceso para obtener señal en segundos
-    preescalado_reloj: process (CLK, RESET_N)
+    preescalado_reloj: process (CLK, RESET_N, IN_P)
+
     variable cnt:integer;
     begin
          -- AJUSTE DEL RELOJ
         if (RESET_N='0') then
+		  cnt:=0;
+		  segundos<='0';
+		elsif (IN_P='1') then
 		  cnt:=0;
 		  segundos<='0';
 		elsif rising_edge(CLK) then
@@ -137,7 +141,7 @@ begin
                 cuenta_seg_dec <= cuenta_seg_dec;
                 cuenta_seg_un  <= cuenta_seg_un;    
              when S1_UPWARD =>
-             if rising_edge(segundos) then           --!!!!NO ACTIVAR CON EL CLK SINO CON OTRA VARIABLE DE PRESCALADO
+             if rising_edge(segundos) then                       --PUEDE DAR PROBLEMAS!!!!!
                 if stop = '0' then
                     if(cuenta_seg_un = 9) then
                         cuenta_seg_un <= (others => '0');
@@ -166,7 +170,7 @@ begin
                 end if;
              end if;
              when S4_DOWNWARD =>                
-             if rising_edge(segundos) then                   --!!!!NO ACTIVAR CON EL CLK SINO CON OTRA VARIABLE DE PRESCALADO
+             if rising_edge(segundos) then                   --PUEDE DAR PROBLEMAS!!!!!
                 if stop = '0' then
                     if(cuenta_seg_un = 0) then
                         cuenta_seg_un <= "1001";
