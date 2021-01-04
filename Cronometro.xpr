@@ -136,13 +136,6 @@
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
-      <File Path="$PSRCDIR/sim_1/new/clk_divider_tb.vhd">
-        <FileInfo>
-          <Attr Name="AutoDisabled" Val="1"/>
-          <Attr Name="UsedIn" Val="synthesis"/>
-          <Attr Name="UsedIn" Val="simulation"/>
-        </FileInfo>
-      </File>
       <File Path="$PPRDIR/../../Trabajo Gus/Decodificador_Display/Decodificador_Display.srcs/sim_1/new/Decoder_tb.vhd">
         <FileInfo>
           <Attr Name="AutoDisabled" Val="1"/>
