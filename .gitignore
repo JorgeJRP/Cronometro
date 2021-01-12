@@ -85,3 +85,8 @@
 !*.bmm
 !*.xmp
 *.jou
+vivado.log
+Cronometro.cache/wt/webtalk_pa.xml
+Cronometro.cache/wt/project.wpc
+Cronometro.cache/wt/java_command_handlers.wdf
+Cronometro.cache/wt/gui_handlers.wdf
