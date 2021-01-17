@@ -2,10 +2,10 @@
 # Vivado v2020.2 (64-bit)
 # SW Build 3064766 on Wed Nov 18 09:12:45 MST 2020
 # IP Build 3064653 on Wed Nov 18 14:17:31 MST 2020
-# Start of session at: Tue Jan 12 11:12:55 2021
-# Process ID: 17416
+# Start of session at: Sun Jan 17 18:28:02 2021
+# Process ID: 13780
 # Current directory: G:/SED/Cronometro
-# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent3132 G:\SED\Cronometro\Cronometro.xpr
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent22496 G:\SED\Cronometro\Cronometro.xpr
 # Log file: G:/SED/Cronometro/vivado.log
 # Journal file: G:/SED/Cronometro\vivado.jou
 #-----------------------------------------------------------
@@ -16,7 +16,16 @@ Finished scanning sources
 INFO: [IP_Flow 19-234] Refreshing IP repositories
 INFO: [IP_Flow 19-1704] No user IP repositories specified
 INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'G:/xilinx/Vivado/2020.2/data/ip'.
-open_project: Time (s): cpu = 00:00:15 ; elapsed = 00:00:05 . Memory (MB): peak = 1017.109 ; gain = 0.000
+open_project: Time (s): cpu = 00:00:21 ; elapsed = 00:00:08 . Memory (MB): peak = 1018.238 ; gain = 0.000
 update_compile_order -fileset sources_1
+reset_run synth_1
+launch_runs synth_1 -jobs 4
+[Sun Jan 17 18:28:53 2021] Launched synth_1...
+Run output will be captured here: G:/SED/Cronometro/Cronometro.runs/synth_1/runme.log
+launch_runs impl_1 -jobs 4
+[Sun Jan 17 18:37:49 2021] Launched impl_1...
+Run output will be captured here: G:/SED/Cronometro/Cronometro.runs/impl_1/runme.log
+open_hw_manager
+close_hw_manager
 exit
-INFO: [Common 17-206] Exiting Vivado at Tue Jan 12 11:17:42 2021...
+INFO: [Common 17-206] Exiting Vivado at Sun Jan 17 18:47:03 2021...
