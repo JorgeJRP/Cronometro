@@ -13,10 +13,10 @@ end debouncer;
 architecture Behavioral of debouncer is
 signal sreg : std_logic_vector(2 downto 0);
 begin
-    process (clk)
+    process (clk, reset)
     begin
     
-    if reset = '1' then
+    if reset = '0' then
         sreg <= "000";
     
     elsif rising_edge(clk) then

@@ -3,10 +3,11 @@
     with args -log top.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source top.tcl
 
 
-****** Vivado v2019.1 (64-bit)
-  **** SW Build 2552052 on Fri May 24 14:49:42 MDT 2019
-  **** IP Build 2548770 on Fri May 24 18:01:18 MDT 2019
-    ** Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+
+****** Vivado v2020.2 (64-bit)
+  **** SW Build 3064766 on Wed Nov 18 09:12:45 MST 2020
+  **** IP Build 3064653 on Wed Nov 18 14:17:31 MST 2020
+    ** Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 
 source top.tcl -notrace
 Command: synth_design -top top -part xc7k70tfbv676-1
@@ -14,248 +15,138 @@ Starting synth_design
 Attempting to get a license for feature 'Synthesis' and/or device 'xc7k70t'
 INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7k70t'
 INFO: [Device 21-403] Loading part xc7k70tfbv676-1
-INFO: Launching helper process for spawning children vivado processes
-INFO: Helper process launched with PID 11376 
+INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 2 processes.
+INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
+INFO: [Synth 8-7075] Helper process launched with PID 16068
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:04 . Memory (MB): peak = 701.898 ; gain = 177.844
+Starting RTL Elaboration : Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 1018.566 ; gain = 0.000
 ---------------------------------------------------------------------------------
-INFO: [Synth 8-638] synthesizing module 'top' [G:/SED/Cronometro/Cronometro.srcs/sources_1/new/top.vhd:13]
-	Parameter frec bound to: 50000000 - type: integer 
-INFO: [Synth 8-3491] module 'clk_divider' declared at 'G:/SED/Cronometro/Cronometro.srcs/sources_1/new/clk_divider.vhd:5' bound to instance 'Inst_clk_divider_counter' of component 'clk_divider' [G:/SED/Cronometro/Cronometro.srcs/sources_1/new/top.vhd:150]
-INFO: [Synth 8-638] synthesizing module 'clk_divider' [G:/SED/Cronometro/Cronometro.srcs/sources_1/new/clk_divider.vhd:13]
-	Parameter frec bound to: 50000000 - type: integer 
-INFO: [Synth 8-256] done synthesizing module 'clk_divider' (1#1) [G:/SED/Cronometro/Cronometro.srcs/sources_1/new/clk_divider.vhd:13]
-	Parameter frec bound to: 100000 - type: integer 
-INFO: [Synth 8-3491] module 'clk_divider' declared at 'G:/SED/Cronometro/Cronometro.srcs/sources_1/new/clk_divider.vhd:5' bound to instance 'Inst_clk_divider_display' of component 'clk_divider' [G:/SED/Cronometro/Cronometro.srcs/sources_1/new/top.vhd:156]
-INFO: [Synth 8-638] synthesizing module 'clk_divider__parameterized1' [G:/SED/Cronometro/Cronometro.srcs/sources_1/new/clk_divider.vhd:13]
-	Parameter frec bound to: 100000 - type: integer 
-INFO: [Synth 8-256] done synthesizing module 'clk_divider__parameterized1' (1#1) [G:/SED/Cronometro/Cronometro.srcs/sources_1/new/clk_divider.vhd:13]
-INFO: [Synth 8-3491] module 'boton_state' declared at 'G:/SED/Cronometro/Cronometro.srcs/sources_1/new/boton_state.vhd:5' bound to instance 'Inst_boton_state_SS' of component 'boton_state' [G:/SED/Cronometro/Cronometro.srcs/sources_1/new/top.vhd:162]
-INFO: [Synth 8-638] synthesizing module 'boton_state' [G:/SED/Cronometro/Cronometro.srcs/sources_1/new/boton_state.vhd:14]
-INFO: [Synth 8-256] done synthesizing module 'boton_state' (2#1) [G:/SED/Cronometro/Cronometro.srcs/sources_1/new/boton_state.vhd:14]
-	Parameter tope bound to: 9 - type: integer 
-INFO: [Synth 8-3491] module 'counter' declared at 'G:/SED/Cronometro/Cronometro.srcs/sources_1/new/counter.vhd:6' bound to instance 'Inst_counter_unid_seg' of component 'counter' [G:/SED/Cronometro/Cronometro.srcs/sources_1/new/top.vhd:170]
-INFO: [Synth 8-638] synthesizing module 'counter' [G:/SED/Cronometro/Cronometro.srcs/sources_1/new/counter.vhd:18]
-	Parameter tope bound to: 9 - type: integer 
-INFO: [Synth 8-256] done synthesizing module 'counter' (3#1) [G:/SED/Cronometro/Cronometro.srcs/sources_1/new/counter.vhd:18]
-	Parameter tope bound to: 5 - type: integer 
-INFO: [Synth 8-3491] module 'counter' declared at 'G:/SED/Cronometro/Cronometro.srcs/sources_1/new/counter.vhd:6' bound to instance 'Inst_counter_dec_seg' of component 'counter' [G:/SED/Cronometro/Cronometro.srcs/sources_1/new/top.vhd:183]
-INFO: [Synth 8-638] synthesizing module 'counter__parameterized1' [G:/SED/Cronometro/Cronometro.srcs/sources_1/new/counter.vhd:18]
-	Parameter tope bound to: 5 - type: integer 
-INFO: [Synth 8-256] done synthesizing module 'counter__parameterized1' (3#1) [G:/SED/Cronometro/Cronometro.srcs/sources_1/new/counter.vhd:18]
-	Parameter tope bound to: 9 - type: integer 
-INFO: [Synth 8-3491] module 'counter' declared at 'G:/SED/Cronometro/Cronometro.srcs/sources_1/new/counter.vhd:6' bound to instance 'Inst_counter_unid_min' of component 'counter' [G:/SED/Cronometro/Cronometro.srcs/sources_1/new/top.vhd:196]
-	Parameter tope bound to: 5 - type: integer 
-INFO: [Synth 8-3491] module 'counter' declared at 'G:/SED/Cronometro/Cronometro.srcs/sources_1/new/counter.vhd:6' bound to instance 'Inst_counter_dec_min' of component 'counter' [G:/SED/Cronometro/Cronometro.srcs/sources_1/new/top.vhd:209]
-	Parameter min bound to: 0 - type: integer 
-	Parameter max bound to: 9 - type: integer 
-INFO: [Synth 8-3491] module 'counter_n' declared at 'G:/SED/Cronometro/Cronometro.srcs/sources_1/new/counter_n.vhd:6' bound to instance 'Inst_counter_n_unid_seg' of component 'counter_n' [G:/SED/Cronometro/Cronometro.srcs/sources_1/new/top.vhd:222]
-INFO: [Synth 8-638] synthesizing module 'counter_n' [G:/SED/Cronometro/Cronometro.srcs/sources_1/new/counter_n.vhd:19]
-	Parameter min bound to: 0 - type: integer 
-	Parameter max bound to: 9 - type: integer 
-INFO: [Synth 8-256] done synthesizing module 'counter_n' (4#1) [G:/SED/Cronometro/Cronometro.srcs/sources_1/new/counter_n.vhd:19]
-	Parameter min bound to: 0 - type: integer 
-	Parameter max bound to: 5 - type: integer 
-INFO: [Synth 8-3491] module 'counter_n' declared at 'G:/SED/Cronometro/Cronometro.srcs/sources_1/new/counter_n.vhd:6' bound to instance 'Inst_counter_n_dec_seg' of component 'counter_n' [G:/SED/Cronometro/Cronometro.srcs/sources_1/new/top.vhd:234]
-INFO: [Synth 8-638] synthesizing module 'counter_n__parameterized1' [G:/SED/Cronometro/Cronometro.srcs/sources_1/new/counter_n.vhd:19]
-	Parameter min bound to: 0 - type: integer 
-	Parameter max bound to: 5 - type: integer 
-INFO: [Synth 8-256] done synthesizing module 'counter_n__parameterized1' (4#1) [G:/SED/Cronometro/Cronometro.srcs/sources_1/new/counter_n.vhd:19]
-	Parameter min bound to: 0 - type: integer 
-	Parameter max bound to: 9 - type: integer 
-INFO: [Synth 8-3491] module 'counter_n' declared at 'G:/SED/Cronometro/Cronometro.srcs/sources_1/new/counter_n.vhd:6' bound to instance 'Inst_counter_n_unid_min' of component 'counter_n' [G:/SED/Cronometro/Cronometro.srcs/sources_1/new/top.vhd:246]
-	Parameter min bound to: 0 - type: integer 
-	Parameter max bound to: 5 - type: integer 
-INFO: [Synth 8-3491] module 'counter_n' declared at 'G:/SED/Cronometro/Cronometro.srcs/sources_1/new/counter_n.vhd:6' bound to instance 'Inst_counter_n_dec_min' of component 'counter_n' [G:/SED/Cronometro/Cronometro.srcs/sources_1/new/top.vhd:258]
-INFO: [Synth 8-3491] module 'multiplexor' declared at 'G:/SED/Cronometro/Cronometro.srcs/sources_1/new/multiplexor.vhd:4' bound to instance 'Inst_multiplexor_unid_seg' of component 'multiplexor' [G:/SED/Cronometro/Cronometro.srcs/sources_1/new/top.vhd:268]
-INFO: [Synth 8-638] synthesizing module 'multiplexor' [G:/SED/Cronometro/Cronometro.srcs/sources_1/new/multiplexor.vhd:11]
-INFO: [Synth 8-256] done synthesizing module 'multiplexor' (5#1) [G:/SED/Cronometro/Cronometro.srcs/sources_1/new/multiplexor.vhd:11]
-INFO: [Synth 8-3491] module 'multiplexor' declared at 'G:/SED/Cronometro/Cronometro.srcs/sources_1/new/multiplexor.vhd:4' bound to instance 'Inst_multiplexor_dec_seg' of component 'multiplexor' [G:/SED/Cronometro/Cronometro.srcs/sources_1/new/top.vhd:275]
-INFO: [Synth 8-3491] module 'multiplexor' declared at 'G:/SED/Cronometro/Cronometro.srcs/sources_1/new/multiplexor.vhd:4' bound to instance 'Inst_multiplexor_unid_min' of component 'multiplexor' [G:/SED/Cronometro/Cronometro.srcs/sources_1/new/top.vhd:282]
-INFO: [Synth 8-3491] module 'multiplexor' declared at 'G:/SED/Cronometro/Cronometro.srcs/sources_1/new/multiplexor.vhd:4' bound to instance 'Inst_multiplexor_dec_min' of component 'multiplexor' [G:/SED/Cronometro/Cronometro.srcs/sources_1/new/top.vhd:289]
-INFO: [Synth 8-3491] module 'decoder' declared at 'G:/SED/Cronometro/Cronometro.srcs/sources_1/new/decoder.vhd:5' bound to instance 'Inst_decoder_unid_seg' of component 'decoder' [G:/SED/Cronometro/Cronometro.srcs/sources_1/new/top.vhd:296]
-INFO: [Synth 8-638] synthesizing module 'decoder' [G:/SED/Cronometro/Cronometro.srcs/sources_1/new/decoder.vhd:10]
-INFO: [Synth 8-256] done synthesizing module 'decoder' (6#1) [G:/SED/Cronometro/Cronometro.srcs/sources_1/new/decoder.vhd:10]
-INFO: [Synth 8-3491] module 'decoder' declared at 'G:/SED/Cronometro/Cronometro.srcs/sources_1/new/decoder.vhd:5' bound to instance 'Inst_decoder_dec_seg' of component 'decoder' [G:/SED/Cronometro/Cronometro.srcs/sources_1/new/top.vhd:301]
-INFO: [Synth 8-3491] module 'decoder' declared at 'G:/SED/Cronometro/Cronometro.srcs/sources_1/new/decoder.vhd:5' bound to instance 'Inst_decoder_unid_min' of component 'decoder' [G:/SED/Cronometro/Cronometro.srcs/sources_1/new/top.vhd:306]
-INFO: [Synth 8-3491] module 'decoder' declared at 'G:/SED/Cronometro/Cronometro.srcs/sources_1/new/decoder.vhd:5' bound to instance 'Inst_decoder_dec_min' of component 'decoder' [G:/SED/Cronometro/Cronometro.srcs/sources_1/new/top.vhd:311]
-INFO: [Synth 8-3491] module 'display_refresh' declared at 'G:/SED/Cronometro/Cronometro.srcs/sources_1/new/display_refresh.vhd:6' bound to instance 'Inst_display_refresh' of component 'display_refresh' [G:/SED/Cronometro/Cronometro.srcs/sources_1/new/top.vhd:316]
-INFO: [Synth 8-638] synthesizing module 'display_refresh' [G:/SED/Cronometro/Cronometro.srcs/sources_1/new/display_refresh.vhd:16]
-INFO: [Synth 8-256] done synthesizing module 'display_refresh' (7#1) [G:/SED/Cronometro/Cronometro.srcs/sources_1/new/display_refresh.vhd:16]
-WARNING: [Synth 8-3848] Net cuenta_n_unid_seg2 in module/entity top does not have driver. [G:/SED/Cronometro/Cronometro.srcs/sources_1/new/top.vhd:41]
-WARNING: [Synth 8-3848] Net cuenta_n_unid_min2 in module/entity top does not have driver. [G:/SED/Cronometro/Cronometro.srcs/sources_1/new/top.vhd:43]
-WARNING: [Synth 8-3848] Net cuenta_n_dec_seg2 in module/entity top does not have driver. [G:/SED/Cronometro/Cronometro.srcs/sources_1/new/top.vhd:42]
-WARNING: [Synth 8-3848] Net cuenta_n_dec_min2 in module/entity top does not have driver. [G:/SED/Cronometro/Cronometro.srcs/sources_1/new/top.vhd:44]
-INFO: [Synth 8-256] done synthesizing module 'top' (8#1) [G:/SED/Cronometro/Cronometro.srcs/sources_1/new/top.vhd:13]
+INFO: [Synth 8-638] synthesizing module 'top' [G:/SED/Cronometro/Cronometro.srcs/sources_1/new/top.vhd:16]
+INFO: [Synth 8-3491] module 'debouncer' declared at 'G:/SED/Cronometro/Cronometro.srcs/sources_1/new/debouncer.vhd:4' bound to instance 'Inst_debouncer_STARTSTOP' of component 'debouncer' [G:/SED/Cronometro/Cronometro.srcs/sources_1/new/top.vhd:67]
+INFO: [Synth 8-638] synthesizing module 'debouncer' [G:/SED/Cronometro/Cronometro.srcs/sources_1/new/debouncer.vhd:13]
+INFO: [Synth 8-256] done synthesizing module 'debouncer' (1#1) [G:/SED/Cronometro/Cronometro.srcs/sources_1/new/debouncer.vhd:13]
+INFO: [Synth 8-3491] module 'debouncer' declared at 'G:/SED/Cronometro/Cronometro.srcs/sources_1/new/debouncer.vhd:4' bound to instance 'Inst_debouncer_UPDOWN' of component 'debouncer' [G:/SED/Cronometro/Cronometro.srcs/sources_1/new/top.vhd:76]
+	Parameter frec bound to: 5 - type: integer 
+INFO: [Synth 8-3491] module 'Counter' declared at 'G:/SED/Cronometro/Cronometro.srcs/sources_1/new/Counter.vhd:5' bound to instance 'Inst_COUNTER' of component 'Counter' [G:/SED/Cronometro/Cronometro.srcs/sources_1/new/top.vhd:85]
+INFO: [Synth 8-638] synthesizing module 'Counter' [G:/SED/Cronometro/Cronometro.srcs/sources_1/new/Counter.vhd:18]
+	Parameter frec bound to: 5 - type: integer 
+WARNING: [Synth 8-614] signal 'stop' is read in the process but is not in the sensitivity list [G:/SED/Cronometro/Cronometro.srcs/sources_1/new/Counter.vhd:43]
+WARNING: [Synth 8-614] signal 'cuenta_min_dec' is read in the process but is not in the sensitivity list [G:/SED/Cronometro/Cronometro.srcs/sources_1/new/Counter.vhd:43]
+WARNING: [Synth 8-614] signal 'cuenta_min_un' is read in the process but is not in the sensitivity list [G:/SED/Cronometro/Cronometro.srcs/sources_1/new/Counter.vhd:43]
+WARNING: [Synth 8-614] signal 'cuenta_seg_dec' is read in the process but is not in the sensitivity list [G:/SED/Cronometro/Cronometro.srcs/sources_1/new/Counter.vhd:43]
+WARNING: [Synth 8-614] signal 'cuenta_seg_un' is read in the process but is not in the sensitivity list [G:/SED/Cronometro/Cronometro.srcs/sources_1/new/Counter.vhd:43]
+WARNING: [Synth 8-614] signal 'state' is read in the process but is not in the sensitivity list [G:/SED/Cronometro/Cronometro.srcs/sources_1/new/Counter.vhd:129]
+WARNING: [Synth 8-614] signal 'cuenta_min_dec' is read in the process but is not in the sensitivity list [G:/SED/Cronometro/Cronometro.srcs/sources_1/new/Counter.vhd:129]
+WARNING: [Synth 8-614] signal 'cuenta_min_un' is read in the process but is not in the sensitivity list [G:/SED/Cronometro/Cronometro.srcs/sources_1/new/Counter.vhd:129]
+WARNING: [Synth 8-614] signal 'cuenta_seg_dec' is read in the process but is not in the sensitivity list [G:/SED/Cronometro/Cronometro.srcs/sources_1/new/Counter.vhd:129]
+WARNING: [Synth 8-614] signal 'cuenta_seg_un' is read in the process but is not in the sensitivity list [G:/SED/Cronometro/Cronometro.srcs/sources_1/new/Counter.vhd:129]
+WARNING: [Synth 8-614] signal 'segundos' is read in the process but is not in the sensitivity list [G:/SED/Cronometro/Cronometro.srcs/sources_1/new/Counter.vhd:129]
+WARNING: [Synth 8-614] signal 'state' is read in the process but is not in the sensitivity list [G:/SED/Cronometro/Cronometro.srcs/sources_1/new/Counter.vhd:210]
+WARNING: [Synth 8-614] signal 'cuenta_min_dec' is read in the process but is not in the sensitivity list [G:/SED/Cronometro/Cronometro.srcs/sources_1/new/Counter.vhd:210]
+WARNING: [Synth 8-614] signal 'cuenta_min_un' is read in the process but is not in the sensitivity list [G:/SED/Cronometro/Cronometro.srcs/sources_1/new/Counter.vhd:210]
+WARNING: [Synth 8-614] signal 'cuenta_seg_dec' is read in the process but is not in the sensitivity list [G:/SED/Cronometro/Cronometro.srcs/sources_1/new/Counter.vhd:210]
+WARNING: [Synth 8-614] signal 'cuenta_seg_un' is read in the process but is not in the sensitivity list [G:/SED/Cronometro/Cronometro.srcs/sources_1/new/Counter.vhd:210]
+INFO: [Synth 8-256] done synthesizing module 'Counter' (2#1) [G:/SED/Cronometro/Cronometro.srcs/sources_1/new/Counter.vhd:18]
+INFO: [Synth 8-3491] module 'Decoder' declared at 'G:/SED/Cronometro/Cronometro.srcs/sources_1/new/Decoder.vhd:4' bound to instance 'Inst_DECODER' of component 'Decoder' [G:/SED/Cronometro/Cronometro.srcs/sources_1/new/top.vhd:97]
+INFO: [Synth 8-638] synthesizing module 'Decoder' [G:/SED/Cronometro/Cronometro.srcs/sources_1/new/Decoder.vhd:16]
+INFO: [Synth 8-256] done synthesizing module 'Decoder' (3#1) [G:/SED/Cronometro/Cronometro.srcs/sources_1/new/Decoder.vhd:16]
+INFO: [Synth 8-256] done synthesizing module 'top' (4#1) [G:/SED/Cronometro/Cronometro.srcs/sources_1/new/top.vhd:16]
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 765.738 ; gain = 241.684
+Finished RTL Elaboration : Time (s): cpu = 00:00:07 ; elapsed = 00:00:07 . Memory (MB): peak = 1018.566 ; gain = 0.000
 ---------------------------------------------------------------------------------
-
-Report Check Netlist: 
-+------+------------------+-------+---------+-------+------------------+
-|      |Item              |Errors |Warnings |Status |Description       |
-+------+------------------+-------+---------+-------+------------------+
-|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
-+------+------------------+-------+---------+-------+------------------+
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 765.738 ; gain = 241.684
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:07 ; elapsed = 00:00:08 . Memory (MB): peak = 1018.566 ; gain = 0.000
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 765.738 ; gain = 241.684
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:07 ; elapsed = 00:00:08 . Memory (MB): peak = 1018.566 ; gain = 0.000
 ---------------------------------------------------------------------------------
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.006 . Memory (MB): peak = 1018.566 ; gain = 0.000
 INFO: [Project 1-570] Preparing netlist for logic optimization
 
 Processing XDC Constraints
 Initializing timing engine
-Parsing XDC File [G:/SED/Cronometro/Cronometro.srcs/constrs_1/imports/digilent-xdc-master/Nexys-4-DDR-Master.xdc]
-Finished Parsing XDC File [G:/SED/Cronometro/Cronometro.srcs/constrs_1/imports/digilent-xdc-master/Nexys-4-DDR-Master.xdc]
+Parsing XDC File [G:/SED/Cronometro/Cronometro.srcs/constrs_1/imports/Desktop/Nexys4DDR_Master.xdc]
+CRITICAL WARNING: [Designutils 20-1307] Command 'display_number[6]' is not supported in the xdc constraint file. [G:/SED/Cronometro/Cronometro.srcs/constrs_1/imports/Desktop/Nexys4DDR_Master.xdc:60]
+CRITICAL WARNING: [Designutils 20-1307] Command 'display_number[5]' is not supported in the xdc constraint file. [G:/SED/Cronometro/Cronometro.srcs/constrs_1/imports/Desktop/Nexys4DDR_Master.xdc:61]
+CRITICAL WARNING: [Designutils 20-1307] Command 'display_number[4]' is not supported in the xdc constraint file. [G:/SED/Cronometro/Cronometro.srcs/constrs_1/imports/Desktop/Nexys4DDR_Master.xdc:62]
+CRITICAL WARNING: [Designutils 20-1307] Command 'display_number[3]' is not supported in the xdc constraint file. [G:/SED/Cronometro/Cronometro.srcs/constrs_1/imports/Desktop/Nexys4DDR_Master.xdc:63]
+CRITICAL WARNING: [Designutils 20-1307] Command 'display_number[2]' is not supported in the xdc constraint file. [G:/SED/Cronometro/Cronometro.srcs/constrs_1/imports/Desktop/Nexys4DDR_Master.xdc:64]
+CRITICAL WARNING: [Designutils 20-1307] Command 'display_number[1]' is not supported in the xdc constraint file. [G:/SED/Cronometro/Cronometro.srcs/constrs_1/imports/Desktop/Nexys4DDR_Master.xdc:65]
+CRITICAL WARNING: [Designutils 20-1307] Command 'display_number[0]' is not supported in the xdc constraint file. [G:/SED/Cronometro/Cronometro.srcs/constrs_1/imports/Desktop/Nexys4DDR_Master.xdc:66]
+Finished Parsing XDC File [G:/SED/Cronometro/Cronometro.srcs/constrs_1/imports/Desktop/Nexys4DDR_Master.xdc]
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [G:/SED/Cronometro/Cronometro.srcs/constrs_1/imports/Desktop/Nexys4DDR_Master.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/top_propImpl.xdc].
+Resolution: To avoid this warning, move constraints listed in [.Xil/top_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
 Completed Processing XDC Constraints
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 878.156 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1042.113 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-WARNING: [Constraints 18-5210] No constraints selected for write.
-Resolution: This message can indicate that there are no constraints for the design, or it can indicate that the used_in flags are set such that the constraints are ignored. This later case is used when running synth_design to not write synthesis constraints to the resulting checkpoint. Instead, project constraints are read when the synthesized design is opened.
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.042 . Memory (MB): peak = 881.707 ; gain = 3.551
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.003 . Memory (MB): peak = 1042.113 ; gain = 0.000
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:10 ; elapsed = 00:00:11 . Memory (MB): peak = 881.707 ; gain = 357.652
+Finished Constraint Validation : Time (s): cpu = 00:00:15 ; elapsed = 00:00:16 . Memory (MB): peak = 1042.113 ; gain = 23.547
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7k70tfbv676-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:10 ; elapsed = 00:00:11 . Memory (MB): peak = 881.707 ; gain = 357.652
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:15 ; elapsed = 00:00:16 . Memory (MB): peak = 1042.113 ; gain = 23.547
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:10 ; elapsed = 00:00:11 . Memory (MB): peak = 881.707 ; gain = 357.652
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:15 ; elapsed = 00:00:16 . Memory (MB): peak = 1042.113 ; gain = 23.547
 ---------------------------------------------------------------------------------
+INFO: [Synth 8-802] inferred FSM for state register 'state_reg' in module 'Counter'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+              s0_initial |                            00001 |                              000
+               s1_upward |                            10000 |                              001
+               s2_stopup |                            01000 |                              010
+             s3_stopdown |                            00100 |                              011
+             s4_downward |                            00010 |                              100
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'state_reg' using encoding 'one-hot' in module 'Counter'
+WARNING: [Synth 8-327] inferring latch for variable 'code_reg' [G:/SED/Cronometro/Cronometro.srcs/sources_1/new/Counter.vhd:224]
+WARNING: [Synth 8-327] inferring latch for variable 'stop_reg' [G:/SED/Cronometro/Cronometro.srcs/sources_1/new/Counter.vhd:56]
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:11 ; elapsed = 00:00:12 . Memory (MB): peak = 881.707 ; gain = 357.652
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:16 ; elapsed = 00:00:17 . Memory (MB): peak = 1042.113 ; gain = 23.547
 ---------------------------------------------------------------------------------
-
-Report RTL Partitions: 
-+-+--------------+------------+----------+
-| |RTL Partition |Replication |Instances |
-+-+--------------+------------+----------+
-+-+--------------+------------+----------+
 ---------------------------------------------------------------------------------
 Start RTL Component Statistics 
 ---------------------------------------------------------------------------------
 Detailed RTL Component Info : 
 +---Adders : 
-	   2 Input     32 Bit       Adders := 2     
-	   2 Input      4 Bit       Adders := 6     
-	   2 Input      3 Bit       Adders := 2     
-	   2 Input      2 Bit       Adders := 1     
+	   2 Input   32 Bit       Adders := 1     
+	   2 Input    4 Bit       Adders := 6     
+	   2 Input    3 Bit       Adders := 2     
 +---Registers : 
-	               32 Bit    Registers := 2     
-	                4 Bit    Registers := 8     
-	                2 Bit    Registers := 1     
-	                1 Bit    Registers := 20    
+	               32 Bit    Registers := 1     
+	                4 Bit    Registers := 4     
+	                3 Bit    Registers := 3     
+	                1 Bit    Registers := 1     
 +---Muxes : 
-	   2 Input     32 Bit        Muxes := 2     
-	   4 Input      7 Bit        Muxes := 1     
-	   2 Input      4 Bit        Muxes := 18    
-	   4 Input      4 Bit        Muxes := 1     
-	   2 Input      3 Bit        Muxes := 2     
-	   2 Input      2 Bit        Muxes := 1     
-	   2 Input      1 Bit        Muxes := 25    
+	   2 Input   32 Bit        Muxes := 1     
+	   2 Input    8 Bit        Muxes := 1     
+	  16 Input    7 Bit        Muxes := 1     
+	   5 Input    5 Bit        Muxes := 1     
+	   2 Input    5 Bit        Muxes := 2     
+	   2 Input    4 Bit        Muxes := 14    
+	   3 Input    4 Bit        Muxes := 4     
+	   4 Input    4 Bit        Muxes := 1     
+	   5 Input    3 Bit        Muxes := 1     
+	   2 Input    3 Bit        Muxes := 1     
+	   2 Input    1 Bit        Muxes := 25    
+	   5 Input    1 Bit        Muxes := 3     
+	   8 Input    1 Bit        Muxes := 1     
 ---------------------------------------------------------------------------------
 Finished RTL Component Statistics 
----------------------------------------------------------------------------------
----------------------------------------------------------------------------------
-Start RTL Hierarchical Component Statistics 
----------------------------------------------------------------------------------
-Hierarchical RTL Component report 
-Module clk_divider 
-Detailed RTL Component Info : 
-+---Adders : 
-	   2 Input     32 Bit       Adders := 1     
-+---Registers : 
-	               32 Bit    Registers := 1     
-	                1 Bit    Registers := 1     
-+---Muxes : 
-	   2 Input     32 Bit        Muxes := 1     
-Module clk_divider__parameterized1 
-Detailed RTL Component Info : 
-+---Adders : 
-	   2 Input     32 Bit       Adders := 1     
-+---Registers : 
-	               32 Bit    Registers := 1     
-	                1 Bit    Registers := 1     
-+---Muxes : 
-	   2 Input     32 Bit        Muxes := 1     
-Module boton_state 
-Detailed RTL Component Info : 
-+---Registers : 
-	                1 Bit    Registers := 2     
-+---Muxes : 
-	   2 Input      1 Bit        Muxes := 1     
-Module counter 
-Detailed RTL Component Info : 
-+---Adders : 
-	   2 Input      4 Bit       Adders := 1     
-+---Registers : 
-	                4 Bit    Registers := 1     
-	                1 Bit    Registers := 2     
-+---Muxes : 
-	   2 Input      4 Bit        Muxes := 2     
-	   2 Input      1 Bit        Muxes := 3     
-Module counter__parameterized1 
-Detailed RTL Component Info : 
-+---Adders : 
-	   2 Input      3 Bit       Adders := 1     
-+---Registers : 
-	                4 Bit    Registers := 1     
-	                1 Bit    Registers := 2     
-+---Muxes : 
-	   2 Input      4 Bit        Muxes := 1     
-	   2 Input      3 Bit        Muxes := 1     
-	   2 Input      1 Bit        Muxes := 3     
-Module counter_n 
-Detailed RTL Component Info : 
-+---Adders : 
-	   2 Input      4 Bit       Adders := 1     
-+---Registers : 
-	                4 Bit    Registers := 1     
-	                1 Bit    Registers := 2     
-+---Muxes : 
-	   2 Input      4 Bit        Muxes := 2     
-	   2 Input      1 Bit        Muxes := 3     
-Module counter_n__parameterized1 
-Detailed RTL Component Info : 
-+---Adders : 
-	   2 Input      4 Bit       Adders := 1     
-+---Registers : 
-	                4 Bit    Registers := 1     
-	                1 Bit    Registers := 2     
-+---Muxes : 
-	   2 Input      4 Bit        Muxes := 2     
-	   2 Input      1 Bit        Muxes := 3     
-Module multiplexor 
-Detailed RTL Component Info : 
-+---Muxes : 
-	   2 Input      4 Bit        Muxes := 1     
-Module display_refresh 
-Detailed RTL Component Info : 
-+---Adders : 
-	   2 Input      2 Bit       Adders := 1     
-+---Registers : 
-	                2 Bit    Registers := 1     
-+---Muxes : 
-	   4 Input      7 Bit        Muxes := 1     
-	   4 Input      4 Bit        Muxes := 1     
-	   2 Input      2 Bit        Muxes := 1     
----------------------------------------------------------------------------------
-Finished RTL Hierarchical Component Statistics
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Part Resource Summary
@@ -269,55 +160,27 @@ Finished Part Resource Summary
 ---------------------------------------------------------------------------------
 Start Cross Boundary and Area Optimization
 ---------------------------------------------------------------------------------
-Warning: Parallel synthesis criteria is not met 
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\Inst_counter_dec_min/cnt_reg[3] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\Inst_counter_dec_seg/cnt_reg[3] )
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:14 ; elapsed = 00:00:15 . Memory (MB): peak = 881.707 ; gain = 357.652
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:18 ; elapsed = 00:00:19 . Memory (MB): peak = 1042.113 ; gain = 23.547
 ---------------------------------------------------------------------------------
-
-Report RTL Partitions: 
-+-+--------------+------------+----------+
-| |RTL Partition |Replication |Instances |
-+-+--------------+------------+----------+
-+-+--------------+------------+----------+
 ---------------------------------------------------------------------------------
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:21 ; elapsed = 00:00:23 . Memory (MB): peak = 881.707 ; gain = 357.652
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:25 ; elapsed = 00:00:26 . Memory (MB): peak = 1042.113 ; gain = 23.547
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:21 ; elapsed = 00:00:23 . Memory (MB): peak = 881.707 ; gain = 357.652
+Finished Timing Optimization : Time (s): cpu = 00:00:25 ; elapsed = 00:00:26 . Memory (MB): peak = 1042.113 ; gain = 23.547
 ---------------------------------------------------------------------------------
-
-Report RTL Partitions: 
-+-+--------------+------------+----------+
-| |RTL Partition |Replication |Instances |
-+-+--------------+------------+----------+
-+-+--------------+------------+----------+
 ---------------------------------------------------------------------------------
 Start Technology Mapping
 ---------------------------------------------------------------------------------
-INFO: [Synth 8-3886] merging instance 'Inst_counter_n_dec_seg/ant_reg' (FDCE) to 'Inst_counter_unid_seg/ant_reg'
-INFO: [Synth 8-3886] merging instance 'Inst_counter_n_dec_min/ant_reg' (FDCE) to 'Inst_counter_unid_seg/ant_reg'
-INFO: [Synth 8-3886] merging instance 'Inst_counter_dec_min/ant_reg' (FDCE) to 'Inst_counter_unid_seg/ant_reg'
-INFO: [Synth 8-3886] merging instance 'Inst_counter_dec_seg/ant_reg' (FDCE) to 'Inst_counter_unid_seg/ant_reg'
-INFO: [Synth 8-3886] merging instance 'Inst_counter_n_unid_seg/ant_reg' (FDCE) to 'Inst_counter_unid_seg/ant_reg'
-INFO: [Synth 8-3886] merging instance 'Inst_counter_unid_seg/ant_reg' (FDCE) to 'Inst_counter_n_unid_min/ant_reg'
-INFO: [Synth 8-3886] merging instance 'Inst_counter_n_unid_min/ant_reg' (FDCE) to 'Inst_counter_unid_min/ant_reg'
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:21 ; elapsed = 00:00:23 . Memory (MB): peak = 881.707 ; gain = 357.652
+Finished Technology Mapping : Time (s): cpu = 00:00:25 ; elapsed = 00:00:26 . Memory (MB): peak = 1048.684 ; gain = 30.117
 ---------------------------------------------------------------------------------
-
-Report RTL Partitions: 
-+-+--------------+------------+----------+
-| |RTL Partition |Replication |Instances |
-+-+--------------+------------+----------+
-+-+--------------+------------+----------+
 ---------------------------------------------------------------------------------
 Start IO Insertion
 ---------------------------------------------------------------------------------
@@ -334,50 +197,37 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:23 ; elapsed = 00:00:25 . Memory (MB): peak = 885.641 ; gain = 361.586
+Finished IO Insertion : Time (s): cpu = 00:00:30 ; elapsed = 00:00:30 . Memory (MB): peak = 1056.199 ; gain = 37.633
 ---------------------------------------------------------------------------------
-
-Report Check Netlist: 
-+------+------------------+-------+---------+-------+------------------+
-|      |Item              |Errors |Warnings |Status |Description       |
-+------+------------------+-------+---------+-------+------------------+
-|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
-+------+------------------+-------+---------+-------+------------------+
 ---------------------------------------------------------------------------------
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:23 ; elapsed = 00:00:25 . Memory (MB): peak = 885.641 ; gain = 361.586
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:30 ; elapsed = 00:00:30 . Memory (MB): peak = 1056.199 ; gain = 37.633
 ---------------------------------------------------------------------------------
-
-Report RTL Partitions: 
-+-+--------------+------------+----------+
-| |RTL Partition |Replication |Instances |
-+-+--------------+------------+----------+
-+-+--------------+------------+----------+
 ---------------------------------------------------------------------------------
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:23 ; elapsed = 00:00:25 . Memory (MB): peak = 885.641 ; gain = 361.586
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:30 ; elapsed = 00:00:30 . Memory (MB): peak = 1056.199 ; gain = 37.633
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:23 ; elapsed = 00:00:25 . Memory (MB): peak = 885.641 ; gain = 361.586
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:30 ; elapsed = 00:00:30 . Memory (MB): peak = 1056.199 ; gain = 37.633
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:23 ; elapsed = 00:00:25 . Memory (MB): peak = 885.641 ; gain = 361.586
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:30 ; elapsed = 00:00:30 . Memory (MB): peak = 1056.199 ; gain = 37.633
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:00:23 ; elapsed = 00:00:25 . Memory (MB): peak = 885.641 ; gain = 361.586
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:30 ; elapsed = 00:00:30 . Memory (MB): peak = 1056.199 ; gain = 37.633
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -393,60 +243,43 @@ Report Cell Usage:
 +------+-------+------+
 |      |Cell   |Count |
 +------+-------+------+
-|1     |BUFG   |     2|
-|2     |CARRY4 |    16|
-|3     |LUT1   |     2|
-|4     |LUT2   |     9|
-|5     |LUT3   |    19|
-|6     |LUT4   |    17|
-|7     |LUT5   |    85|
-|8     |LUT6   |    63|
-|9     |FDCE   |   103|
-|10    |FDRE   |     2|
-|11    |IBUF   |     4|
-|12    |OBUF   |    11|
+|1     |BUFG   |     1|
+|2     |CARRY4 |     8|
+|3     |LUT1   |     6|
+|4     |LUT2   |     3|
+|5     |LUT3   |     8|
+|6     |LUT4   |    24|
+|7     |LUT5   |    51|
+|8     |LUT6   |    15|
+|9     |FDCE   |    43|
+|10    |FDPE   |     1|
+|11    |FDRE   |    18|
+|12    |LD     |     5|
+|13    |IBUF   |     4|
+|14    |OBUF   |    15|
 +------+-------+------+
-
-Report Instance Areas: 
-+------+---------------------------+----------------------------+------+
-|      |Instance                   |Module                      |Cells |
-+------+---------------------------+----------------------------+------+
-|1     |top                        |                            |   333|
-|2     |  Inst_boton_state_SS      |boton_state                 |     8|
-|3     |  Inst_clk_divider_counter |clk_divider                 |    82|
-|4     |  Inst_clk_divider_display |clk_divider__parameterized1 |    83|
-|5     |  Inst_counter_dec_min     |counter__parameterized1     |    15|
-|6     |  Inst_counter_dec_seg     |counter__parameterized1_0   |    18|
-|7     |  Inst_counter_n_dec_min   |counter_n__parameterized1   |     6|
-|8     |  Inst_counter_n_dec_seg   |counter_n__parameterized1_1 |     9|
-|9     |  Inst_counter_n_unid_min  |counter_n                   |    14|
-|10    |  Inst_counter_n_unid_seg  |counter_n_2                 |    12|
-|11    |  Inst_counter_unid_min    |counter                     |    29|
-|12    |  Inst_counter_unid_seg    |counter_3                   |    27|
-|13    |  Inst_display_refresh     |display_refresh             |    13|
-+------+---------------------------+----------------------------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:23 ; elapsed = 00:00:25 . Memory (MB): peak = 885.641 ; gain = 361.586
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:30 ; elapsed = 00:00:31 . Memory (MB): peak = 1056.199 ; gain = 37.633
 ---------------------------------------------------------------------------------
-Synthesis finished with 0 errors, 0 critical warnings and 0 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:18 ; elapsed = 00:00:23 . Memory (MB): peak = 885.641 ; gain = 245.617
-Synthesis Optimization Complete : Time (s): cpu = 00:00:24 ; elapsed = 00:00:25 . Memory (MB): peak = 885.641 ; gain = 361.586
+Synthesis finished with 0 errors, 0 critical warnings and 2 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:20 ; elapsed = 00:00:28 . Memory (MB): peak = 1056.199 ; gain = 14.086
+Synthesis Optimization Complete : Time (s): cpu = 00:00:30 ; elapsed = 00:00:31 . Memory (MB): peak = 1056.199 ; gain = 37.633
 INFO: [Project 1-571] Translating synthesized netlist
-INFO: [Netlist 29-17] Analyzing 16 Unisim elements for replacement
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.004 . Memory (MB): peak = 1067.219 ; gain = 0.000
+INFO: [Netlist 29-17] Analyzing 13 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 899.039 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1075.250 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
-No Unisim elements were transformed.
+  A total of 5 instances were transformed.
+  LD => LDCE: 5 instances
 
 INFO: [Common 17-83] Releasing license: Synthesis
-62 Infos, 5 Warnings, 0 Critical Warnings and 0 Errors encountered.
+29 Infos, 18 Warnings, 7 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:00:30 ; elapsed = 00:00:32 . Memory (MB): peak = 899.039 ; gain = 599.320
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 899.039 ; gain = 0.000
-WARNING: [Constraints 18-5210] No constraints selected for write.
-Resolution: This message can indicate that there are no constraints for the design, or it can indicate that the used_in flags are set such that the constraints are ignored. This later case is used when running synth_design to not write synthesis constraints to the resulting checkpoint. Instead, project constraints are read when the synthesized design is opened.
+synth_design: Time (s): cpu = 00:00:37 ; elapsed = 00:00:40 . Memory (MB): peak = 1075.250 ; gain = 56.684
+INFO: [runtcl-6] Synthesis results are not added to the cache due to CRITICAL_WARNING
 INFO: [Common 17-1381] The checkpoint 'G:/SED/Cronometro/Cronometro.runs/synth_1/top.dcp' has been generated.
 INFO: [runtcl-4] Executing : report_utilization -file top_utilization_synth.rpt -pb top_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Fri Dec  4 20:10:20 2020...
+INFO: [Common 17-206] Exiting Vivado at Mon Jan 18 19:16:42 2021...

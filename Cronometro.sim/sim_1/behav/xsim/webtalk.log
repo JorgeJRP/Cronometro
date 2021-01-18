@@ -1,14 +1,14 @@
 #-----------------------------------------------------------
-# Webtalk v2019.1 (64-bit)
-# SW Build 2552052 on Fri May 24 14:49:42 MDT 2019
-# IP Build 2548770 on Fri May 24 18:01:18 MDT 2019
-# Start of session at: Sat Jan  2 17:07:13 2021
-# Process ID: 15256
+# Webtalk v2020.2 (64-bit)
+# SW Build 3064766 on Wed Nov 18 09:12:45 MST 2020
+# IP Build 3064653 on Wed Nov 18 14:17:31 MST 2020
+# Start of session at: Mon Jan 18 18:49:38 2021
+# Process ID: 772
 # Current directory: G:/SED/Cronometro/Cronometro.sim/sim_1/behav/xsim
-# Command line: wbtcv.exe -mode batch -source G:/SED/Cronometro/Cronometro.sim/sim_1/behav/xsim/xsim.dir/debouncer_tb_behav/webtalk/xsim_webtalk.tcl -notrace
+# Command line: wbtcv.exe -mode batch -source G:/SED/Cronometro/Cronometro.sim/sim_1/behav/xsim/xsim.dir/top_tb_behav/webtalk/xsim_webtalk.tcl -notrace
 # Log file: G:/SED/Cronometro/Cronometro.sim/sim_1/behav/xsim/webtalk.log
 # Journal file: G:/SED/Cronometro/Cronometro.sim/sim_1/behav/xsim\webtalk.jou
 #-----------------------------------------------------------
-source G:/SED/Cronometro/Cronometro.sim/sim_1/behav/xsim/xsim.dir/debouncer_tb_behav/webtalk/xsim_webtalk.tcl -notrace
-INFO: [Common 17-186] 'G:/SED/Cronometro/Cronometro.sim/sim_1/behav/xsim/xsim.dir/debouncer_tb_behav/webtalk/usage_statistics_ext_xsim.xml' has been successfully sent to Xilinx on Sat Jan  2 17:07:16 2021. For additional details about this file, please refer to the WebTalk help file at C:/Xilinx/Vivado/2019.1/doc/webtalk_introduction.html.
-INFO: [Common 17-206] Exiting Webtalk at Sat Jan  2 17:07:16 2021...
+source G:/SED/Cronometro/Cronometro.sim/sim_1/behav/xsim/xsim.dir/top_tb_behav/webtalk/xsim_webtalk.tcl -notrace
+INFO: [Common 17-186] 'G:/SED/Cronometro/Cronometro.sim/sim_1/behav/xsim/xsim.dir/top_tb_behav/webtalk/usage_statistics_ext_xsim.xml' has been successfully sent to Xilinx on Mon Jan 18 18:49:41 2021. For additional details about this file, please refer to the WebTalk help file at G:/xilinx/Vivado/2020.2/doc/webtalk_introduction.html.
+INFO: [Common 17-206] Exiting Webtalk at Mon Jan 18 18:49:41 2021...

@@ -1,6 +1,6 @@
-Vivado Simulator 2019.1
-Copyright 1986-1999, 2001-2019 Xilinx, Inc. All Rights Reserved.
-Running: C:/Xilinx/Vivado/2019.1/bin/unwrapped/win64.o/xelab.exe -wto a53044c313144eb8bba27b92627c6824 --incr --debug typical --relax --mt 2 -L xil_defaultlib -L secureip --snapshot debouncer_tb_behav xil_defaultlib.debouncer_tb -log elaborate.log 
+Vivado Simulator 2020.2
+Copyright 1986-1999, 2001-2020 Xilinx, Inc. All Rights Reserved.
+Running: G:/xilinx/Vivado/2020.2/bin/unwrapped/win64.o/xelab.exe -wto a53044c313144eb8bba27b92627c6824 --incr --debug typical --relax --mt 2 -L xil_defaultlib -L secureip --snapshot top_tb_behav xil_defaultlib.top_tb -log elaborate.log 
 Using 2 slave threads.
 Starting static elaboration
 Completed static elaboration
@@ -12,5 +12,8 @@ Compiling package std.textio
 Compiling package ieee.std_logic_1164
 Compiling package ieee.numeric_std
 Compiling architecture behavioral of entity xil_defaultlib.debouncer [debouncer_default]
-Compiling architecture bench of entity xil_defaultlib.debouncer_tb
-Built simulation snapshot debouncer_tb_behav
+Compiling architecture behavioral of entity xil_defaultlib.Counter [\Counter(frec=5)\]
+Compiling architecture dataflow of entity xil_defaultlib.Decoder [decoder_default]
+Compiling architecture behavioral of entity xil_defaultlib.top [top_default]
+Compiling architecture bench of entity xil_defaultlib.top_tb
+Built simulation snapshot top_tb_behav
