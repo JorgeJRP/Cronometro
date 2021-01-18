@@ -115,6 +115,7 @@ proc step_failed { step } {
 OPTRACE "impl_1" END { }
 }
 
+set_msg_config -id {Common 17-41} -limit 10000000
 
 OPTRACE "impl_1" START { ROLLUP_1 }
 OPTRACE "Phase: Init Design" START { ROLLUP_AUTO }
@@ -137,7 +138,7 @@ OPTRACE "set parameters" END { }
 OPTRACE "add files" START { }
   add_files -quiet G:/SED/Cronometro/Cronometro.runs/synth_1/top.dcp
 OPTRACE "read constraints: implementation" START { }
-  read_xdc G:/SED/Cronometro/Cronometro.srcs/constrs_1/imports/digilent-xdc-master/Nexys-4-DDR-Master.xdc
+  read_xdc G:/SED/Cronometro/Cronometro.srcs/constrs_1/imports/Desktop/Nexys4DDR_Master.xdc
 OPTRACE "read constraints: implementation" END { }
 OPTRACE "add files" END { }
 OPTRACE "link_design" START { }

@@ -6,7 +6,7 @@ entity top is
          clk               : in  STD_LOGIC;
          reset             : in  STD_LOGIC;
          startstop         : in  STD_LOGIC;
-         up_down           : in STD_LOGIC;
+         up_down           : in  STD_LOGIC;
            
          display_number    : out  STD_LOGIC_VECTOR (6 downto 0);
          display_selection : out  STD_LOGIC_VECTOR (7 downto 0)

@@ -70,6 +70,8 @@ proc create_report { reportName command } {
   }
 }
 OPTRACE "synth_1" START { ROLLUP_AUTO }
+set_param chipscope.maxJobs 2
+set_msg_config -id {Common 17-41} -limit 10000000
 OPTRACE "Creating in-memory project" START { }
 create_project -in_memory -part xc7k70tfbv676-1
 
@@ -99,8 +101,8 @@ OPTRACE "Adding files" END { }
 foreach dcp [get_files -quiet -all -filter file_type=="Design\ Checkpoint"] {
   set_property used_in_implementation false $dcp
 }
-read_xdc G:/SED/Cronometro/Cronometro.srcs/constrs_1/imports/digilent-xdc-master/Nexys-4-DDR-Master.xdc
-set_property used_in_implementation false [get_files G:/SED/Cronometro/Cronometro.srcs/constrs_1/imports/digilent-xdc-master/Nexys-4-DDR-Master.xdc]
+read_xdc G:/SED/Cronometro/Cronometro.srcs/constrs_1/imports/Desktop/Nexys4DDR_Master.xdc
+set_property used_in_implementation false [get_files G:/SED/Cronometro/Cronometro.srcs/constrs_1/imports/Desktop/Nexys4DDR_Master.xdc]
 
 set_param ips.enableIPCacheLiteLoad 1
 close [open __synthesis_is_running__ w]
