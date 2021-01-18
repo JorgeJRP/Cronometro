@@ -12,7 +12,7 @@ Compiling package std.textio
 Compiling package ieee.std_logic_1164
 Compiling package ieee.numeric_std
 Compiling architecture behavioral of entity xil_defaultlib.debouncer [debouncer_default]
-Compiling architecture behavioral of entity xil_defaultlib.Counter [counter_default]
+Compiling architecture behavioral of entity xil_defaultlib.Counter [\Counter(frec=5)\]
 Compiling architecture dataflow of entity xil_defaultlib.Decoder [decoder_default]
 Compiling architecture behavioral of entity xil_defaultlib.top [top_default]
 Compiling architecture bench of entity xil_defaultlib.top_tb

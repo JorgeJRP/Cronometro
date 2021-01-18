@@ -35,8 +35,7 @@ begin
     	if RESET_N = '0' then
         	state <= S0_INITIAL;
         elsif rising_edge(CLK) then
-        	state <= next_state;
-        	stop <= '0';           --Cuando se actualiza el estado se quita la prohibición de conteo
+        	state <= next_state;       
         end if;
     end process;
     
@@ -54,6 +53,7 @@ begin
                 	next_state <= S2_STOPUP;
                 end if;
                 
+                if stop = '0' then
                 if cuenta_min_dec = 5 then
                    if cuenta_min_un = 9 then
                       if cuenta_seg_dec = 5 then
@@ -64,24 +64,28 @@ begin
                       end if;
                    end if;
                 end if;
+                end if;
                 
             when S2_STOPUP =>
-            	if IN_P = '1' then
+            	if IN_P = '1' then            	
                 	next_state <= S1_UPWARD;           --Prioridad de inicio de cuenta hacia arriba frente a cambio
                 	elsif CAMBIO = '1' then
                 	      next_state <= S3_STOPDOWN; 
+                	      stop <= '0';
                 end if;
             when S3_STOPDOWN =>
             	if IN_P = '1' then
                 	next_state <= S4_DOWNWARD;         --Prioridad de inicio de cuenta hacia abajo frente a cambio
                 	elsif CAMBIO = '1' then
                 	       next_state <= S2_STOPUP;
+                	       stop <= '0';
                 end if;
             when S4_DOWNWARD =>
             	if IN_P = '1' then
                 	next_state <= S3_STOPDOWN;
                 end if;
                 
+                if stop = '0' then
                 if cuenta_min_dec = 0 then
                    if cuenta_min_un = 0 then
                       if cuenta_seg_dec = 0 then
@@ -91,6 +95,7 @@ begin
                          end if;
                       end if;
                    end if;
+                end if;
                 end if;
                 
            	when others	=>	--Llegar a este caso implica que ha habido interferencia con la señal

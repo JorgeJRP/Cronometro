@@ -2,10 +2,10 @@
 # Vivado v2020.2 (64-bit)
 # SW Build 3064766 on Wed Nov 18 09:12:45 MST 2020
 # IP Build 3064653 on Wed Nov 18 14:17:31 MST 2020
-# Start of session at: Sun Jan 17 18:28:02 2021
-# Process ID: 13780
+# Start of session at: Mon Jan 18 18:01:03 2021
+# Process ID: 16488
 # Current directory: G:/SED/Cronometro
-# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent22496 G:\SED\Cronometro\Cronometro.xpr
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent10404 G:\SED\Cronometro\Cronometro.xpr
 # Log file: G:/SED/Cronometro/vivado.log
 # Journal file: G:/SED/Cronometro\vivado.jou
 #-----------------------------------------------------------
@@ -16,16 +16,272 @@ Finished scanning sources
 INFO: [IP_Flow 19-234] Refreshing IP repositories
 INFO: [IP_Flow 19-1704] No user IP repositories specified
 INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'G:/xilinx/Vivado/2020.2/data/ip'.
-open_project: Time (s): cpu = 00:00:21 ; elapsed = 00:00:08 . Memory (MB): peak = 1018.238 ; gain = 0.000
+open_project: Time (s): cpu = 00:00:16 ; elapsed = 00:00:07 . Memory (MB): peak = 1014.051 ; gain = 0.000
 update_compile_order -fileset sources_1
 reset_run synth_1
 launch_runs synth_1 -jobs 4
-[Sun Jan 17 18:28:53 2021] Launched synth_1...
+[Mon Jan 18 18:36:41 2021] Launched synth_1...
 Run output will be captured here: G:/SED/Cronometro/Cronometro.runs/synth_1/runme.log
 launch_runs impl_1 -jobs 4
-[Sun Jan 17 18:37:49 2021] Launched impl_1...
+[Mon Jan 18 18:38:06 2021] Launched impl_1...
 Run output will be captured here: G:/SED/Cronometro/Cronometro.runs/impl_1/runme.log
-open_hw_manager
-close_hw_manager
-exit
-INFO: [Common 17-206] Exiting Vivado at Sun Jan 17 18:47:03 2021...
+set_property -name {xsim.simulate.runtime} -value {10s} -objects [get_filesets sim_1]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [G:\SED\Cronometro\Cronometro.srcs\sources_1\new\Counter.vhd:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [G:\SED\Cronometro\Cronometro.srcs\sources_1\new\top.vhd:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [G:\SED\Cronometro\Cronometro.srcs\sim_1\new\top_tb.vhd:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [G:\SED\Cronometro\Cronometro.srcs\sources_1\new\Counter.vhd:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [G:\SED\Cronometro\Cronometro.srcs\sources_1\new\top.vhd:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [G:\SED\Cronometro\Cronometro.srcs\sim_1\new\top_tb.vhd:]
+ERROR: [Common 17-180] Spawn failed: No error
+launch_simulation
+Command: launch_simulation 
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'G:/SED/Cronometro/Cronometro.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-54] Inspecting design source files for 'top_tb' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'G:/SED/Cronometro/Cronometro.sim/sim_1/behav/xsim'
+"xvhdl --incr --relax -prj top_tb_vhdl.prj"
+INFO: [VRFC 10-163] Analyzing VHDL file "G:/SED/Cronometro/Cronometro.srcs/sources_1/new/counter.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'Counter'
+INFO: [USF-XSim-69] 'compile' step finished in '3' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'G:/SED/Cronometro/Cronometro.sim/sim_1/behav/xsim'
+"xelab -wto a53044c313144eb8bba27b92627c6824 --incr --debug typical --relax --mt 2 -L xil_defaultlib -L secureip --snapshot top_tb_behav xil_defaultlib.top_tb -log elaborate.log"
+Vivado Simulator 2020.2
+Copyright 1986-1999, 2001-2020 Xilinx, Inc. All Rights Reserved.
+Running: G:/xilinx/Vivado/2020.2/bin/unwrapped/win64.o/xelab.exe -wto a53044c313144eb8bba27b92627c6824 --incr --debug typical --relax --mt 2 -L xil_defaultlib -L secureip --snapshot top_tb_behav xil_defaultlib.top_tb -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling package std.standard
+Compiling package std.textio
+Compiling package ieee.std_logic_1164
+Compiling package ieee.numeric_std
+Compiling architecture behavioral of entity xil_defaultlib.debouncer [debouncer_default]
+Compiling architecture behavioral of entity xil_defaultlib.Counter [counter_default]
+Compiling architecture dataflow of entity xil_defaultlib.Decoder [decoder_default]
+Compiling architecture behavioral of entity xil_defaultlib.top [top_default]
+Compiling architecture bench of entity xil_defaultlib.top_tb
+Built simulation snapshot top_tb_behav
+
+****** Webtalk v2020.2 (64-bit)
+  **** SW Build 3064766 on Wed Nov 18 09:12:45 MST 2020
+  **** IP Build 3064653 on Wed Nov 18 14:17:31 MST 2020
+    ** Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
+
+source G:/SED/Cronometro/Cronometro.sim/sim_1/behav/xsim/xsim.dir/top_tb_behav/webtalk/xsim_webtalk.tcl -notrace
+INFO: [Common 17-186] 'G:/SED/Cronometro/Cronometro.sim/sim_1/behav/xsim/xsim.dir/top_tb_behav/webtalk/usage_statistics_ext_xsim.xml' has been successfully sent to Xilinx on Mon Jan 18 18:46:57 2021. For additional details about this file, please refer to the WebTalk help file at G:/xilinx/Vivado/2020.2/doc/webtalk_introduction.html.
+INFO: [Common 17-206] Exiting Webtalk at Mon Jan 18 18:46:57 2021...
+run_program: Time (s): cpu = 00:00:00 ; elapsed = 00:00:09 . Memory (MB): peak = 1014.051 ; gain = 0.000
+INFO: [USF-XSim-69] 'elaborate' step finished in '9' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'G:/SED/Cronometro/Cronometro.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "top_tb_behav -key {Behavioral:sim_1:Functional:top_tb} -tclbatch {top_tb.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Vivado Simulator 2020.2
+Time resolution is 1 ps
+source top_tb.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 10s
+INFO: [Common 17-41] Interrupt caught. Command should exit soon.
+run: Time (s): cpu = 00:02:06 ; elapsed = 00:02:03 . Memory (MB): peak = 1014.051 ; gain = 0.000
+INFO: [Common 17-344] 'run' was cancelled
+INFO: [Common 17-344] 'source' was cancelled
+xsim: Time (s): cpu = 00:02:11 ; elapsed = 00:02:14 . Memory (MB): peak = 1014.051 ; gain = 0.000
+INFO: [Common 17-344] 'xsim' was cancelled
+INFO: [Vivado 12-5357] 'simulate' step aborted
+launch_simulation: Time (s): cpu = 00:02:14 ; elapsed = 00:02:26 . Memory (MB): peak = 1014.051 ; gain = 0.000
+INFO: [Common 17-344] 'launch_simulation' was cancelled
+set_property -name {xsim.simulate.runtime} -value {3s} -objects [get_filesets sim_1]
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+close_sim: Time (s): cpu = 00:00:03 ; elapsed = 00:00:08 . Memory (MB): peak = 1014.051 ; gain = 0.000
+launch_simulation
+Command: launch_simulation 
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'G:/SED/Cronometro/Cronometro.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-54] Inspecting design source files for 'top_tb' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'G:/SED/Cronometro/Cronometro.sim/sim_1/behav/xsim'
+"xvhdl --incr --relax -prj top_tb_vhdl.prj"
+INFO: [USF-XSim-69] 'compile' step finished in '2' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'G:/SED/Cronometro/Cronometro.sim/sim_1/behav/xsim'
+"xelab -wto a53044c313144eb8bba27b92627c6824 --incr --debug typical --relax --mt 2 -L xil_defaultlib -L secureip --snapshot top_tb_behav xil_defaultlib.top_tb -log elaborate.log"
+Vivado Simulator 2020.2
+Copyright 1986-1999, 2001-2020 Xilinx, Inc. All Rights Reserved.
+Running: G:/xilinx/Vivado/2020.2/bin/unwrapped/win64.o/xelab.exe -wto a53044c313144eb8bba27b92627c6824 --incr --debug typical --relax --mt 2 -L xil_defaultlib -L secureip --snapshot top_tb_behav xil_defaultlib.top_tb -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Completed static elaboration
+INFO: [XSIM 43-4323] No Change in HDL. Linking previously generated obj files to create kernel
+INFO: [USF-XSim-69] 'elaborate' step finished in '3' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'G:/SED/Cronometro/Cronometro.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "top_tb_behav -key {Behavioral:sim_1:Functional:top_tb} -tclbatch {top_tb.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Vivado Simulator 2020.2
+Time resolution is 1 ps
+source top_tb.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 3s
+INFO: [Common 17-41] Interrupt caught. Command should exit soon.
+run: Time (s): cpu = 00:02:36 ; elapsed = 00:02:30 . Memory (MB): peak = 1014.051 ; gain = 0.000
+INFO: [Common 17-344] 'run' was cancelled
+INFO: [Common 17-344] 'source' was cancelled
+xsim: Time (s): cpu = 00:02:40 ; elapsed = 00:02:44 . Memory (MB): peak = 1014.051 ; gain = 0.000
+INFO: [Common 17-344] 'xsim' was cancelled
+INFO: [Vivado 12-5357] 'simulate' step aborted
+launch_simulation: Time (s): cpu = 00:02:41 ; elapsed = 00:02:49 . Memory (MB): peak = 1014.051 ; gain = 0.000
+INFO: [Common 17-344] 'launch_simulation' was cancelled
+set_property -name {xsim.simulate.runtime} -value {30ms} -objects [get_filesets sim_1]
+set_property -name {xsim.simulate.runtime} -value {1ms} -objects [get_filesets sim_1]
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+launch_simulation
+Command: launch_simulation 
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'G:/SED/Cronometro/Cronometro.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-54] Inspecting design source files for 'top_tb' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'G:/SED/Cronometro/Cronometro.sim/sim_1/behav/xsim'
+"xvhdl --incr --relax -prj top_tb_vhdl.prj"
+INFO: [VRFC 10-163] Analyzing VHDL file "G:/SED/Cronometro/Cronometro.srcs/sources_1/new/top.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'top'
+INFO: [USF-XSim-69] 'compile' step finished in '2' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'G:/SED/Cronometro/Cronometro.sim/sim_1/behav/xsim'
+"xelab -wto a53044c313144eb8bba27b92627c6824 --incr --debug typical --relax --mt 2 -L xil_defaultlib -L secureip --snapshot top_tb_behav xil_defaultlib.top_tb -log elaborate.log"
+Vivado Simulator 2020.2
+Copyright 1986-1999, 2001-2020 Xilinx, Inc. All Rights Reserved.
+Running: G:/xilinx/Vivado/2020.2/bin/unwrapped/win64.o/xelab.exe -wto a53044c313144eb8bba27b92627c6824 --incr --debug typical --relax --mt 2 -L xil_defaultlib -L secureip --snapshot top_tb_behav xil_defaultlib.top_tb -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling package std.standard
+Compiling package std.textio
+Compiling package ieee.std_logic_1164
+Compiling package ieee.numeric_std
+Compiling architecture behavioral of entity xil_defaultlib.debouncer [debouncer_default]
+Compiling architecture behavioral of entity xil_defaultlib.Counter [\Counter(frec=5000)\]
+Compiling architecture dataflow of entity xil_defaultlib.Decoder [decoder_default]
+Compiling architecture behavioral of entity xil_defaultlib.top [top_default]
+Compiling architecture bench of entity xil_defaultlib.top_tb
+Built simulation snapshot top_tb_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '3' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'G:/SED/Cronometro/Cronometro.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "top_tb_behav -key {Behavioral:sim_1:Functional:top_tb} -tclbatch {top_tb.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Vivado Simulator 2020.2
+Time resolution is 1 ps
+source top_tb.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 1ms
+xsim: Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 1014.051 ; gain = 0.000
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'top_tb_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1ms
+launch_simulation: Time (s): cpu = 00:00:06 ; elapsed = 00:00:11 . Memory (MB): peak = 1014.051 ; gain = 0.000
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+launch_simulation
+Command: launch_simulation 
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'G:/SED/Cronometro/Cronometro.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-54] Inspecting design source files for 'top_tb' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'G:/SED/Cronometro/Cronometro.sim/sim_1/behav/xsim'
+"xvhdl --incr --relax -prj top_tb_vhdl.prj"
+INFO: [VRFC 10-163] Analyzing VHDL file "G:/SED/Cronometro/Cronometro.srcs/sources_1/new/top.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'top'
+INFO: [USF-XSim-69] 'compile' step finished in '2' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'G:/SED/Cronometro/Cronometro.sim/sim_1/behav/xsim'
+"xelab -wto a53044c313144eb8bba27b92627c6824 --incr --debug typical --relax --mt 2 -L xil_defaultlib -L secureip --snapshot top_tb_behav xil_defaultlib.top_tb -log elaborate.log"
+Vivado Simulator 2020.2
+Copyright 1986-1999, 2001-2020 Xilinx, Inc. All Rights Reserved.
+Running: G:/xilinx/Vivado/2020.2/bin/unwrapped/win64.o/xelab.exe -wto a53044c313144eb8bba27b92627c6824 --incr --debug typical --relax --mt 2 -L xil_defaultlib -L secureip --snapshot top_tb_behav xil_defaultlib.top_tb -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling package std.standard
+Compiling package std.textio
+Compiling package ieee.std_logic_1164
+Compiling package ieee.numeric_std
+Compiling architecture behavioral of entity xil_defaultlib.debouncer [debouncer_default]
+Compiling architecture behavioral of entity xil_defaultlib.Counter [\Counter(frec=5)\]
+Compiling architecture dataflow of entity xil_defaultlib.Decoder [decoder_default]
+Compiling architecture behavioral of entity xil_defaultlib.top [top_default]
+Compiling architecture bench of entity xil_defaultlib.top_tb
+Built simulation snapshot top_tb_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '3' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'G:/SED/Cronometro/Cronometro.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "top_tb_behav -key {Behavioral:sim_1:Functional:top_tb} -tclbatch {top_tb.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Vivado Simulator 2020.2
+Time resolution is 1 ps
+source top_tb.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 1ms
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'top_tb_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1ms
+launch_simulation: Time (s): cpu = 00:00:04 ; elapsed = 00:00:09 . Memory (MB): peak = 1301.383 ; gain = 0.000
+export_ip_user_files -of_objects  [get_files G:/SED/Cronometro/Cronometro.srcs/constrs_1/imports/digilent-xdc-master/Nexys-4-DDR-Master.xdc] -no_script -reset -force -quiet
+remove_files  -fileset constrs_1 G:/SED/Cronometro/Cronometro.srcs/constrs_1/imports/digilent-xdc-master/Nexys-4-DDR-Master.xdc
+file delete -force G:/SED/Cronometro/Cronometro.srcs/constrs_1/imports/digilent-xdc-master/Nexys-4-DDR-Master.xdc
+add_files -fileset constrs_1 -norecurse {{C:/Users/Jorge Rico/Desktop/Nexys4DDR_Master.xdc}}
+import_files -fileset constrs_1 {{C:/Users/Jorge Rico/Desktop/Nexys4DDR_Master.xdc}}
