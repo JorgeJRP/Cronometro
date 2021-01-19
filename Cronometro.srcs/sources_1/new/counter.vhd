@@ -47,6 +47,7 @@ begin
         	when S0_INITIAL =>
             	if IN_P = '1' then
                 	next_state <= S1_UPWARD;
+                	stop <= '0';                   --Inicializar stop
                 end if;
             when S1_UPWARD =>
             	if IN_P = '1' then             --Transición por botón
@@ -109,12 +110,12 @@ begin
     variable cnt:integer;
     begin
          -- AJUSTE DEL RELOJ
-        if (RESET_N='0') then
+        if (RESET_N='0' or IN_P='1') then
 		  cnt:=0;
 		  segundos<='0';
-		elsif (IN_P='1') then
-		  cnt:=0;
-		  segundos<='0';
+		--elsif (IN_P='1') then
+		  --cnt:=0;
+		  --segundos<='0';
 		elsif rising_edge(CLK) then
 			if (cnt=frec) then
 				cnt:=0;
@@ -126,7 +127,7 @@ begin
 	end process;	
         
     
-    memoria_contador: process (CLK)        
+    memoria_contador: process (CLK , segundos)        
     begin
            
         case state is
@@ -200,7 +201,7 @@ begin
                         end if;
                         
                     else
-                        cuenta_seg_un <= cuenta_seg_un + 1;
+                        cuenta_seg_un <= cuenta_seg_un - 1;
                     end if;
               end if;
         end if;
@@ -224,28 +225,32 @@ begin
 				        code <= "1010";
 				        digsel <= "10000000";
 				    else
-				        digsel <= "00000000";
+				        code <= "1111";
+				        digsel <= "10000000";
 				    end if;
 				when 1 =>   --P
 				    if state = S1_UPWARD or state = S2_STOPUP then      --Cuidado OR
 				        code <= "1011";
 				        digsel <= "01000000";
 				    else
-				        digsel <= "00000000";
+				        code <= "1111";
+				        digsel <= "01000000";
 				    end if;
 				when 2 =>   --d
 				    if state = S4_DOWNWARD or state = S3_STOPDOWN then      --Cuidado OR
 				        code <= "1100";
 				        digsel <= "00100000";
 				    else
-				        digsel <= "00000000";
+				        code   <= "1111";
+				        digsel <= "00100000";
 				    end if;
 				when 3 =>   --o
 				    if state = S4_DOWNWARD or state = S3_STOPDOWN then      --Cuidado OR
 				        code <= "1101";
 				        digsel <= "00010000";
 				    else
-				        digsel <= "00000000";
+				        code <= "1111";
+				        digsel <= "00010000";
 				    end if;
 			    when 4 =>   --Decenas minutos
 				    code <= std_logic_vector(cuenta_min_dec);       --Cuidado error de longitud
