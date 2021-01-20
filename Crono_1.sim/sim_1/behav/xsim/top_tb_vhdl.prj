@@ -1,0 +1,10 @@
+# compile vhdl design source files
+vhdl xil_defaultlib  \
+"../../../../Crono_1.srcs/sources_1/new/Counter.vhd" \
+"../../../../Crono_1.srcs/sources_1/new/Debouncer.vhd" \
+"../../../../Crono_1.srcs/sources_1/new/Decoder.vhd" \
+"../../../../Crono_1.srcs/sources_1/new/Top.vhd" \
+"../../../../Crono_1.srcs/sim_1/new/Top_tb.vhd" \
+
+# Do not sort compile order
+nosort
