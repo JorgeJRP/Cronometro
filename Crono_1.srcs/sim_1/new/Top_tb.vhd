@@ -10,6 +10,7 @@ architecture bench of top_tb is
   component top
       Port ( 
            clk               : in   STD_LOGIC;
+           reset_n           : in   STD_LOGIC;
            startstop         : in   STD_LOGIC;
            up_down           : in   STD_LOGIC;
            display_number    : out  STD_LOGIC_VECTOR (6 downto 0);
@@ -18,7 +19,7 @@ architecture bench of top_tb is
   end component;
 
   signal clk: STD_LOGIC;
-  signal reset: STD_LOGIC;
+  signal reset_n: STD_LOGIC;
   signal startstop: STD_LOGIC;
   signal up_down: STD_LOGIC;
   signal display_number: STD_LOGIC_VECTOR (6 downto 0);
@@ -30,7 +31,7 @@ architecture bench of top_tb is
 begin
 
   uut: top port map ( clk               => clk,
-                      reset             => reset,
+                      reset_n             => reset_n,
                       startstop         => startstop,
                       up_down           => up_down,
                       display_number    => display_number,
@@ -39,11 +40,11 @@ begin
   stimulus: process
   begin
   
-    reset <= '0';
+    reset_n <= '0';
     startstop <= '0';
     up_down <= '0';
     wait for 15 ns;
-    reset <= '1';
+    reset_n <= '1';
     wait for 15 ns;
     
     startstop <= '1';

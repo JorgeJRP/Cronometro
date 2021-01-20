@@ -83,7 +83,7 @@ Inst_debouncer_UPDOWN: debouncer            --Antirebotes para cambio
             );
             
 Inst_COUNTER : Counter
-    generic map (frec => 50000000)
+    generic map (frec => 5)
     port map(  
             RESET_N =>  reset_n,    
             CLK     =>  clk,              
