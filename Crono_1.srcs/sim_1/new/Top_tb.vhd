@@ -25,56 +25,67 @@ architecture bench of top_tb is
   signal display_number: STD_LOGIC_VECTOR (6 downto 0);
   signal display_selection: STD_LOGIC_VECTOR (7 downto 0) ;
   
-  signal stop_the_clock: boolean;
-  constant clock_period: time := 10 ns;
+  constant CLK_PERIOD: time := 10 ns;
 
 begin
 
   uut: top port map ( clk               => clk,
-                      reset_n             => reset_n,
+                      reset_n           => reset_n,
                       startstop         => startstop,
                       up_down           => up_down,
                       display_number    => display_number,
                       display_selection => display_selection );
 
+ clkgen: process
+ begin
+    	clk	<= '0';
+        wait for 0.5 * CLK_PERIOD;
+        clk	<= '1';
+        wait for 0.5 * CLK_PERIOD;
+  end process;
+
+ --Pulso de reset inicial
+	RESET_N <= '0' after 0.25*CLK_PERIOD,
+    		   '1' after 0.75*CLK_PERIOD;
+
   stimulus: process
   begin
   
-    reset_n <= '0';
-    startstop <= '0';
+    startstop <= '0';          --INICIALIZAMOS
     up_down <= '0';
-    wait for 15 ns;
-    reset_n <= '1';
-    wait for 15 ns;
+    wait for 200 ns;
     
-    startstop <= '1';
-    wait for 15 ns;
+    startstop <= '1';            --CUENTA ARRIBA
+    wait for CLK_PERIOD;
     startstop <= '0';
-   
-    wait for 10000 ns;
---    startstop <= '1';
---    wait for 15 ns;
---    startstop <= '0';
---    wait for 15 ns;
---    up_down <= '1';
---    wait for 15 ns;
---    up_down <= '0';
---    wait for 15 ns;
---    startstop <= '1';
---    wait for 15 ns;
---    startstop <= '0';
---    wait for 1000 ns;
+    wait for 700 ns;
     
-    stop_the_clock <= true;
-    wait;
-  end process;
-  
-  clocking: process
-  begin
-    while not stop_the_clock loop
-      clk <= '0', '1' after clock_period / 2;
-      wait for clock_period;
-    end loop;
+    startstop <= '1';            --PARAMOS
+    wait for CLK_PERIOD;
+    startstop <= '0';
+    wait for 300 ns;
+    
+    startstop <= '1';           --REANUDAMOS
+    wait for CLK_PERIOD;
+    startstop <= '0';
+    wait for 300 ns;
+    
+    startstop <= '1';           --PARAMOS
+    wait for CLK_PERIOD;
+    startstop <= '0';
+    wait for CLK_PERIOD;
+    
+    up_down <= '1';          --CAMBIAMOS Y MANTENEMOS PARADO
+    wait for CLK_PERIOD;
+    up_down <= '0';
+    wait for 200 ns;
+    
+    startstop <= '1';           --REANUDAMOS
+    wait for CLK_PERIOD;
+    startstop <= '0';
+    wait for 300 ns;
+    --HASTA AQUÍ CUENTA BIEN HACIA ARRIBA Y HACIA ABAJO.
+    
     wait;
   end process;
 

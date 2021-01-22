@@ -8,7 +8,7 @@ end;
 architecture bench of Counter_tb is
 
   component Counter
-      Generic (frec: integer:=10);
+      Generic (frec: integer:=50000000);
       port(  
           RESET_N     : in std_logic;
           CLK         : in std_logic;
@@ -25,14 +25,12 @@ architecture bench of Counter_tb is
   signal CAMBIO: std_logic;
   signal code: std_logic_vector(3 downto 0);
   signal digsel: std_logic_vector(7 downto 0) ;
-
-  constant clock_period: time := 10 ns;
-  signal stop_the_clock: boolean;
+  
+  constant CLK_PERIOD	 : time		:= 1 sec / 100_000_000;		--Periodo del Reloj 10 ns
 
 begin
 
-  -- Insert values for generic parameters !!
-  uut: Counter generic map ( frec    =>  10)
+ uut: Counter generic map ( frec    =>  10)
                   port map ( RESET_N => RESET_N,
                              CLK     => CLK,
                              IN_P    => IN_P,
@@ -40,34 +38,58 @@ begin
                              code    => code,
                              digsel  => digsel );
 
+  clkgen: process
+  begin
+    	CLK	<= '0';
+        wait for 0.5 * CLK_PERIOD;
+        CLK	<= '1';
+        wait for 0.5 * CLK_PERIOD;
+  end process;
+	
+	  --Pulso de reset inicial
+	RESET_N <= '0' after 0.25*CLK_PERIOD,
+    		   '1' after 0.75*CLK_PERIOD;
+
   stimulus: process
   begin
-  
-    -- Put initialisation code here
 
-    RESET_N <= '0';
-    wait for 5 ns;
-    RESET_N <= '1';
-    wait for 5 ns;
-    
-    -- Put test bench stimulus code here
-    CAMBIO <= '0';
-    IN_P <= '1';
-    wait for 5 ns;
+    CAMBIO <= '0';          --INICIALIZAMOS
     IN_P <= '0';
-    wait for 10000 ns;
+    wait for 200 ns;    
+    
+    IN_P <= '1';            --CUENTA ARRIBA
+    wait for CLK_PERIOD;
+    IN_P <= '0';
+    wait for 700 ns;
 
-    stop_the_clock <= true;
-    wait;
+    IN_P <= '1';            --PARAMOS
+    wait for CLK_PERIOD;
+    IN_P <= '0';
+    wait for 300 ns;
+    
+    IN_P <= '1';           --REANUDAMOS
+    wait for CLK_PERIOD;
+    IN_P <= '0';
+    wait for 300 ns;
+    
+    IN_P <= '1';           --PARAMOS
+    wait for CLK_PERIOD;
+    IN_P <= '0';
+    wait for CLK_PERIOD;
+    
+    CAMBIO <= '1';          --CAMBIAMOS Y MANTENEMOS PARADO
+    wait for CLK_PERIOD;
+    CAMBIO <= '0';
+    wait for 200 ns;
+    
+    IN_P <= '1';           --REANUDAMOS
+    wait for CLK_PERIOD;
+    IN_P <= '0';
+    wait for 300 ns;
+    --HASTA AQUÍ CUENTA BIEN HACIA ARRIBA Y HACIA ABAJO.
+   
+   wait;            --!!!SI NO SE PONE ESTE WAIT NO CUENTA EL PROGRAMA
+    
   end process;
-
-  clocking: process
-  begin
-    while not stop_the_clock loop
-      CLK <= '0', '1' after clock_period / 2;
-      wait for clock_period;
-    end loop;
-    wait;
-  end process;
-
+  
 end;

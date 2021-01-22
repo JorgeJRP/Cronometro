@@ -5,7 +5,7 @@ use IEEE.numeric_std.all;       --Añadimos esta librería para poder utilizar la 
 entity Decoder_tb is
 end Decoder_tb;
 
-architecture Behavioral of Decoder_tb is
+architecture bench of Decoder_tb is
 
     --Inputs
     signal RESET_N      : std_logic;
@@ -63,10 +63,10 @@ begin
         end loop;
         
     wait for CLK_PERIOD;                --Mensaje de éxito de la simulación
-        assert false
-        	report "Simulacion terminada exitosamente"
-            severity failure;
-    
+        --assert false
+        --	report "Simulacion terminada exitosamente"
+         --   severity failure;
+    wait;
     end process;
 
-end Behavioral;
+end bench;

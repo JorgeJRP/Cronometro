@@ -70,14 +70,14 @@ begin
             when S2_STOPUP =>
             	if IN_P = '1' then            	
                 	next_state <= S1_UPWARD;           --Prioridad de inicio de cuenta hacia arriba frente a cambio
-                	elsif CAMBIO = '1' then
+                elsif CAMBIO = '1' then
                 	      next_state <= S3_STOPDOWN; 
                 	      stop <= '0';
                 end if;
             when S3_STOPDOWN =>
             	if IN_P = '1' then
                 	next_state <= S4_DOWNWARD;         --Prioridad de inicio de cuenta hacia abajo frente a cambio
-                	elsif CAMBIO = '1' then
+                elsif CAMBIO = '1' then
                 	       next_state <= S2_STOPUP;
                 	       stop <= '0';
                 end if;
@@ -224,33 +224,33 @@ begin
 				    if state = S1_UPWARD or state = S2_STOPUP then      --Cuidado OR
 				        code <= "1010";
 				        digsel <= "10000000";
-				   -- else
-				   --    code <= "1111";
-				   --    digsel <= "10000000";
+				    else
+				       code <= "1111";
+				       digsel <= "10000000";
 				    end if;
 				when 1 =>   --P
 				    if state = S1_UPWARD or state = S2_STOPUP then      --Cuidado OR
 				        code <= "1011";
 				        digsel <= "01000000";
-				  --  else
-				   --     code <= "1111";
-				   --     digsel <= "01000000";
+				    else
+				        code <= "1111";
+				        digsel <= "01000000";
 				    end if;
 				when 2 =>   --d
 				    if state = S4_DOWNWARD or state = S3_STOPDOWN then      --Cuidado OR
 				        code <= "1100";
 				        digsel <= "00100000";
-				   -- else
-				  --      code   <= "1111";
-				   --     digsel <= "00100000";
+				    else
+				        code   <= "1111";
+				        digsel <= "00100000";
 				    end if;
 				when 3 =>   --o
 				    if state = S4_DOWNWARD or state = S3_STOPDOWN then      --Cuidado OR
 				        code <= "1101";
 				        digsel <= "00010000";
-				  --  else
-				  --      code <= "1111";
-				   --     digsel <= "00010000";
+				    else
+				        code   <= "1111";
+				        digsel <= "00010000";
 				    end if;
 			    when 4 =>   --Decenas minutos
 				    code <= std_logic_vector(cuenta_min_dec);       --Cuidado error de longitud

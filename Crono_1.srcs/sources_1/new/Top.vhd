@@ -37,7 +37,7 @@ COMPONENT debouncer is
 end COMPONENT;
 
 COMPONENT Counter
-	Generic (frec: integer:=50000000);  -- VALOR PARA CONSEGUIR 1Hz 50000000
+	Generic (frec: integer:=50000000);  -- VALOR PARA CONSEGUIR 1Hz 50 000 000
     port(  
         RESET_N     : in std_logic;
         CLK         : in std_logic;
@@ -83,7 +83,7 @@ Inst_debouncer_UPDOWN: debouncer            --Antirebotes para cambio
             );
             
 Inst_COUNTER : Counter
-    generic map (frec => 5)
+    generic map (frec => 10)     --50000000
     port map(  
             RESET_N =>  reset_n,    
             CLK     =>  clk,              

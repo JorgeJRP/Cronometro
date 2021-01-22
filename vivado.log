@@ -2,22 +2,22 @@
 # Vivado v2020.2 (64-bit)
 # SW Build 3064766 on Wed Nov 18 09:12:45 MST 2020
 # IP Build 3064653 on Wed Nov 18 14:17:31 MST 2020
-# Start of session at: Wed Jan 20 12:44:14 2021
-# Process ID: 7140
-# Current directory: G:/SED/Cronometro
-# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent16892 G:\SED\Cronometro\Crono_1.xpr
-# Log file: G:/SED/Cronometro/vivado.log
-# Journal file: G:/SED/Cronometro\vivado.jou
+# Start of session at: Fri Jan 22 14:41:24 2021
+# Process ID: 2728
+# Current directory: D:/Archivos/Escritorio/GITHUB/Laboratorio/Cronometro
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent8564 D:\Archivos\Escritorio\GITHUB\Laboratorio\Cronometro\Crono_1.xpr
+# Log file: D:/Archivos/Escritorio/GITHUB/Laboratorio/Cronometro/vivado.log
+# Journal file: D:/Archivos/Escritorio/GITHUB/Laboratorio/Cronometro\vivado.jou
 #-----------------------------------------------------------
 start_gui
-open_project G:/SED/Cronometro/Crono_1.xpr
-INFO: [Project 1-313] Project file moved from 'C:/Users/Jorge Rico/Desktop/cronos/Crono_1' since last save.
-WARNING: [filemgmt 56-2] Default IP Output Path : Could not find the directory 'G:/SED/Cronometro/Crono_1.gen/sources_1', nor could it be found using path 'C:/Users/Jorge Rico/Desktop/cronos/Crono_1/Crono_1.gen/sources_1'.
+open_project D:/Archivos/Escritorio/GITHUB/Laboratorio/Cronometro/Crono_1.xpr
+WARNING: [filemgmt 56-3] Default IP Output Path : Could not find the directory 'D:/Archivos/Escritorio/GITHUB/Laboratorio/Cronometro/Crono_1.gen/sources_1'.
+CRITICAL WARNING: [Project 1-19] Could not find the file 'D:/Archivos/Escritorio/GITHUB/Laboratorio/Cronometro/Counter_tb_behav.wcfg'.
 Scanning sources...
 Finished scanning sources
 INFO: [IP_Flow 19-234] Refreshing IP repositories
 INFO: [IP_Flow 19-1704] No user IP repositories specified
-INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'G:/xilinx/Vivado/2020.2/data/ip'.
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'D:/Xilinx/Vivado/2020.2/data/ip'.
 update_compile_order -fileset sources_1
 exit
-INFO: [Common 17-206] Exiting Vivado at Wed Jan 20 12:46:01 2021...
+INFO: [Common 17-206] Exiting Vivado at Fri Jan 22 14:41:56 2021...
