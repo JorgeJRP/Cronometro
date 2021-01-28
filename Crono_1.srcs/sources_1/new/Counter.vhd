@@ -22,7 +22,7 @@ type state_t is (S0_INITIAL, S1_UPWARD, S2_STOPUP, S3_STOPDOWN, S4_DOWNWARD);
 signal state, next_state	:	state_t;
     --Creamos dos señales de tipo estado para utilizarlas como registros
 
-signal stop : std_logic;            --Variable flag para parar de contar
+signal stop : std_logic := '0';            --Variable flag para parar de contar     !!!!!VALOR POR DEFECTO A O
 signal cuenta_min_dec, cuenta_min_un, cuenta_seg_dec, cuenta_seg_un   : unsigned (3 downto 0);
 
 signal segundos : std_logic;      -- Señal que cambia de valor cada segundo
@@ -32,6 +32,8 @@ begin
     --Proceso de actualización del estado actual con el futuro
     state_register: process(CLK, RESET_N)
    	begin
+   	    state <= S0_INITIAL;        --!!!!!ASIGNACIÓN POR DEFECTO ANTES DE LAS COMPROBACIONES
+   	    
     	if RESET_N = '0' then
         	state <= S0_INITIAL;
         elsif rising_edge(CLK) then
@@ -147,19 +149,24 @@ begin
                 cuenta_seg_dec <= cuenta_seg_dec;
                 cuenta_seg_un  <= cuenta_seg_un;    
              when S1_UPWARD =>
-             if rising_edge(segundos) then                       --PUEDE DAR PROBLEMAS!!!!!   rising_edge(segundos)
+             if rising_edge(segundos) then                       --PUEDE DAR PROBLEMAS!   rising_edge(segundos)
                 if stop = '0' then
                     if(cuenta_seg_un = 9) then
                         cuenta_seg_un <= (others => '0');
                         
                         if(cuenta_seg_dec = 5) then
-                            cuenta_seg_dec <= cuenta_seg_dec - 5;
+                            cuenta_seg_dec <= (others => '0'); --cuenta_seg_dec - 5; !!!!!
                             
                             if(cuenta_min_un = 9) then
                                cuenta_min_un <= (others => '0');
                                
                                if(cuenta_min_dec < 5) then
                                   cuenta_min_dec <= cuenta_min_dec + 1;
+                               else 
+                               stop <= '1';                --!!!!!PUEDE SER REDUNDANTE
+                               cuenta_seg_un <= to_unsigned(9,cuenta_seg_un'length);    --PARA QUE SE QUEDE EN 59:59
+                               cuenta_seg_dec <= to_unsigned(5,cuenta_seg_dec'length);
+                               cuenta_min_un <= to_unsigned(9,cuenta_min_un'length);
                                end if;
                                
                             else
@@ -170,25 +177,28 @@ begin
                         cuenta_seg_dec <= cuenta_seg_dec + 1;
                         end if;
                         
-                     else
-                        cuenta_seg_un <= cuenta_seg_un + 1;
+                    else
+                    cuenta_seg_un <= cuenta_seg_un + 1;
                     end if;
                 end if;
              end if;
              when S4_DOWNWARD =>                
-             if rising_edge(segundos) then                   --PUEDE DAR PROBLEMAS!!!!!
+             if rising_edge(segundos) then                   --PUEDE DAR PROBLEMAS!
                 if stop = '0' then
                     if(cuenta_seg_un = 0) then
-                        cuenta_seg_un <= "1001";
+                        cuenta_seg_un <= to_unsigned(9,cuenta_seg_un'length);           --"1001"; !!!!!!
                         
                         if(cuenta_seg_dec = 0) then
-                            cuenta_seg_dec <= "0101";
+                            cuenta_seg_dec <= to_unsigned(5,cuenta_seg_dec'length);     --"0101";
                             
                             if(cuenta_min_un = 0) then
+                                cuenta_min_un <= to_unsigned(9,cuenta_min_un'length);   --"1001"; ANTES ESTABA DENTRO DEL SIG IF
                                 if(cuenta_min_dec = 0) then
-                                
+                                    stop <= '1';                 --!!!!!ANTES ESTABA VACÍO
+                                    cuenta_seg_un <= (others => '0');
+                                    cuenta_seg_dec <= (others => '0');         --SE PODRÍA PROBAR A PONER 0 CON TO UNSIGNED
+                                    cuenta_min_un <= (others => '0');
                                 else
-                                    cuenta_min_un <= "1001";
                                     cuenta_min_dec <= cuenta_min_dec - 1;
                                 end if;
                                
@@ -200,9 +210,9 @@ begin
                         cuenta_seg_dec <= cuenta_seg_dec - 1;
                         end if;
                         
-                    else
-                        cuenta_seg_un <= cuenta_seg_un - 1;
-                    end if;
+                   else
+                   cuenta_seg_un <= cuenta_seg_un - 1;
+                   end if;
               end if;
         end if;
         end case;        
@@ -212,59 +222,66 @@ begin
     variable n  : integer range 0 to 7;
     begin
         if rising_edge (CLK) then    --Código para la alternancia de dígitos
+            n := 0;         --!!!!!PARA INICIALIZAR
 			if n=7 then             
 				n:=0;
 			else
 				n:=n+1;
 			end if;
-		end if;
+		--end if;         !!!!!JUNTO EL SUMADOR CON EL CASE
 		
-		case n is
-				when 0 =>   --U
-				    if state = S1_UPWARD or state = S2_STOPUP then      --Cuidado OR
-				        code <= "1010";
-				        digsel <= "10000000";
-				    else
-				       code <= "1111";
-				       digsel <= "10000000";
-				    end if;
-				when 1 =>   --P
-				    if state = S1_UPWARD or state = S2_STOPUP then      --Cuidado OR
-				        code <= "1011";
-				        digsel <= "01000000";
-				    else
-				        code <= "1111";
-				        digsel <= "01000000";
-				    end if;
-				when 2 =>   --d
-				    if state = S4_DOWNWARD or state = S3_STOPDOWN then      --Cuidado OR
-				        code <= "1100";
-				        digsel <= "00100000";
-				    else
-				        code   <= "1111";
-				        digsel <= "00100000";
-				    end if;
-				when 3 =>   --o
-				    if state = S4_DOWNWARD or state = S3_STOPDOWN then      --Cuidado OR
-				        code <= "1101";
-				        digsel <= "00010000";
-				    else
-				        code   <= "1111";
-				        digsel <= "00010000";
-				    end if;
-			    when 4 =>   --Decenas minutos
-				    code <= std_logic_vector(cuenta_min_dec);       --Cuidado error de longitud
-				    digsel <= "00001000";                           --(que convierta a 4 bits)
-				when 5 =>   --Unidades minutos
-				    code <= std_logic_vector(cuenta_min_un);       --Cuidado error de longitud
-				    digsel <= "00000100";
-				when 6 =>   --Decenas segundos
-				    code <= std_logic_vector(cuenta_seg_dec);       --Cuidado error de longitud
-				    digsel <= "00000010";
-		        when 7 =>   --Unidades segundos
-				    code <= std_logic_vector(cuenta_seg_un);       --Cuidado error de longitud
-				    digsel <= "00000001";				    
-		end case;    
+            case n is
+                    when 0 =>   --U
+                        if state = S1_UPWARD or state = S2_STOPUP then      --Cuidado OR
+                            code <= "1010";
+                            digsel <= "10000000";
+                        else
+                           code <= "1111";
+                           digsel <= "10000000";
+                        end if;
+                    when 1 =>   --P
+                        if state = S1_UPWARD or state = S2_STOPUP then      --Cuidado OR
+                            code <= "1011";
+                            digsel <= "01000000";
+                        else
+                            code <= "1111";
+                            digsel <= "01000000";
+                        end if;
+                    when 2 =>   --d
+                        if state = S4_DOWNWARD or state = S3_STOPDOWN then      --Cuidado OR
+                            code <= "1100";
+                            digsel <= "00100000";
+                        else
+                            code   <= "1111";
+                            digsel <= "00100000";
+                        end if;
+                    when 3 =>   --o
+                        if state = S4_DOWNWARD or state = S3_STOPDOWN then      --Cuidado OR
+                            code <= "1101";
+                            digsel <= "00010000";
+                        else
+                            code   <= "1111";
+                            digsel <= "00010000";
+                        end if;
+                    when 4 =>   --Decenas minutos
+                        code <= std_logic_vector(cuenta_min_dec);       --Cuidado error de longitud
+                        digsel <= "00001000";                           --(que convierta a 4 bits)
+                    when 5 =>   --Unidades minutos
+                        code <= std_logic_vector(cuenta_min_un);       --Cuidado error de longitud
+                        digsel <= "00000100";
+                    when 6 =>   --Decenas segundos
+                        code <= std_logic_vector(cuenta_seg_dec);       --Cuidado error de longitud
+                        digsel <= "00000010";
+                    when 7 =>   --Unidades segundos
+                        code <= std_logic_vector(cuenta_seg_un);       --Cuidado error de longitud
+                        digsel <= "00000001";				
+                            
+                    when others =>                      --!!!!!CUANDO NO ESTÉ EN EL RANGO VAMOS A IMPRIMIR Us A MODO DE COMPROBACIÓN
+                        code <= "1010";
+                        digsel <= "10000000";
+                        
+            end case;    
+       end if;
     end process;
 
 end Behavioral;

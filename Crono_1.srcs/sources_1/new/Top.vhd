@@ -24,7 +24,6 @@ architecture Behavioral of top is
     signal CODE : std_logic_vector(3 downto 0);
     signal DIGSEL : std_logic_vector(7 downto 0);
     
-    
 -- COMPONENTES
 
 COMPONENT debouncer is
