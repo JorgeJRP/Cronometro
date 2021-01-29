@@ -27,7 +27,7 @@ signal cuenta_min_dec, cuenta_min_un, cuenta_seg_dec, cuenta_seg_un   : unsigned
 
 signal segundos : std_logic;      -- Señal que cambia de valor cada segundo
 
-signal n  : integer range 0 to 7 := 0;  --Señal para el cambio de estado del emisor
+signal n : integer range 0 to 7 := 0;         --Variable para el cambio de estados del emisor
 
 begin
 
@@ -221,15 +221,14 @@ begin
     end process;           
     
     emisor: process (CLK)
-    --variable n  : integer range 0 to 7;   --En vez de una variable vamos a usar una señal para que se actualice de forma síncrona
+
     begin
         if rising_edge (CLK) then    --Código para la alternancia de dígitos
- --Si se inicializa n dentro del proceso se está todo el rato en el mismo caso pero lo que
- --se imprime se imprime nítido. El problema es que se sigue imprimiendo en todos los dígitos
+            
 			if n=7 then             
-				n:=0;
+				n<=0;
 			else
-				n:=n+1;
+				n<=n+1;
 			end if;
 		--end if;         !!!!!JUNTO EL SUMADOR CON EL CASE
 		

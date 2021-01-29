@@ -15,12 +15,12 @@ end entity Decoder;
 
 architecture Dataflow of Decoder is
 
---signal segmentos    : std_logic_vector(6 downto 0); --Variables auxiliares para el tratamiento de la información
---signal digitos      : std_logic_vector(7 downto 0);
+signal segmentos    : std_logic_vector(6 downto 0); --Variables auxiliares para el tratamiento de la información
+signal digitos      : std_logic_vector(7 downto 0);
 
 begin
     with code select
-        segments <= "0000001" when "0000",  --0
+        segments <= "0000001" when "0000",  --0     --Antes era segmentos
                      "1001111" when "0001",  --1
                      "0010010" when "0010",  --2
                      "0000110" when "0011",  --3
@@ -36,12 +36,14 @@ begin
                      "1100010" when "1101",  --o
                      "1111110" when others;  --Guión
                     
-   -- digitos <= digsel;       --Conectamos la entrada a la salida
+    --digitos <= digsel;       --Conectamos la entrada a la salida
   
     --Al final pasamos los datos de los registros "segmentos" y "digitos" a las variables de salida
-    --segments <= segmentos when RESET_N = '1' else
-    --			"1111111" when RESET_N = '0';
-    --digits <= digitos when RESET_N = '1' else
-    --			"11111111" when RESET_N = '0';
-    digits <= digsel;               
+    --segments <= segmentos; --when RESET_N = '1' else
+    			--"1111111" when RESET_N = '0';
+    --digits <= digitos;-- when RESET_N = '1' else
+    			--"11111111" when RESET_N = '0';
+    			
+    digits <= digsel;
+                
 end architecture Dataflow;
